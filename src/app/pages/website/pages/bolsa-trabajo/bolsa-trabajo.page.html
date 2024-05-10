@@ -1,0 +1,333 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="headerStatusService.setBooleanStatus($event)">
+  
+  <div class="fondo d-flex ">
+    <div class=" frojo w-100 d-flex flex-column h-100">
+      <div class="d-flex h-100 w-100 ">
+        <h1 class="titulo text-center my-auto mx-auto text-white">
+          <strong>Ofertas de empleo</strong>
+        </h1>
+  
+      
+      </div>
+
+      <p class="mt-auto ms-auto text-white me-4 mb-4"> Inicio / Bolsa de Trabajo </p>
+    </div>
+  
+  </div>
+
+  <div class="container">
+    <ion-searchbar   class="custom-searchbar my-4" style="width: 250px;--border-radius: 20px;" [(ngModel)]="search" (ngModelChange)="bolsa=[]" placeholder="Buscar Empleo" inputmode="text" type="text" [debounce]="250" ></ion-searchbar>
+    <div class="row">
+      <ion-list class="d-none d-md-block">
+        <ion-card mode="ios" style="background-color: #f5f5f5;">
+          <ion-item class="ion-padding shadow"   lines="none" class="border"color="ligth"  *ngFor="let trabajo of bolsa">
+            <img *ngIf="trabajo.foto" slot="start" [src]="uri+trabajo.foto"/>
+            <ion-label class="my-3"><strong><h3><strong>{{trabajo.titulo}}</strong></h3>
+            <p class="my-3">Hasta: {{mon(trabajo.vigencia)}}</p>
+            <div class="row my-3">
+              <ion-button fill="clear"  class=" shadow col-md-2 mx-3 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+               {{trabajo.puestoDeseado}}
+              </ion-button>
+              <ion-button fill="clear"  class="shadow col-md-2 mx-3 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+                {{trabajo.escolaridad}}
+               </ion-button>
+               <ion-button fill="clear"  class=" shadow col-md-2 mx-3 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+                {{trabajo.estado}}
+               </ion-button>
+               <ion-button fill="clear"  class="shadow col-md-2 me-auto border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+                {{trabajo.espacio}}
+               </ion-button>
+              
+            </div>
+            </strong></ion-label>
+            <ion-button  [routerLink]="trabajo.identificador" expand="block" slot="end" shape="round">
+              <strong class="h6 m-0 p-2">Ver Oferta</strong>
+            </ion-button>
+          </ion-item>
+        </ion-card>
+      
+      </ion-list>
+      
+      <div class="d-block d-md-none">
+        <ion-card *ngFor="let trabajo of bolsa" mode="ios" style="background-color: #f5f5f5;">
+          <ion-card-header>
+            <img class="img-fluid w-100" [src]="uri+trabajo.foto"/>
+          </ion-card-header>
+          <ion-card-content>
+            <h3><strong>{{trabajo.titulo}}</strong></h3>
+            <br>
+            <ion-button fill="clear"  class=" shadow col-md-2 mx-2 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+              {{trabajo.puestoDeseado}}
+             </ion-button>
+             <ion-button fill="clear"  class="shadow col-md-2 mx-2 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+               {{trabajo.escolaridad}}
+              </ion-button>
+              <ion-button fill="clear"  class=" shadow col-md-2 mx-2 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+               {{trabajo.estado}}
+              </ion-button>
+              <ion-button fill="clear"  class="shadow col-md-2 mx-2 border " style="border-radius: 30px; background-color: white; color: black;"  shape="round">
+               {{trabajo.espacio}}
+              </ion-button>
+
+              <ion-button  class=" my-4" expand="block"  [routerLink]="trabajo.identificador" shape="round">
+                <strong class="h6 m-0 p-2">Ver Oferta</strong>
+              </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="d-flex pt-5 w-100 px-5 px-md-0">
+    <ion-card class="shadow mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0" style="min-height: 50vh;" >
+           <img src="../../../../../assets/22.jpg" class="h-100 p-0" alt="" style="min-height: 50vh;" >
+        </div>
+        <div class="col-md-6 d-flex ">
+       <div class="m-auto container">
+        <ion-text class="ion-margin-vertical" color="dark">
+          <h3 ><strong>¿Estás en busca de otra vacante?</strong></h3>
+        </ion-text>
+        <br>
+        <ion-text color="dark" class="mt-3">
+          <h3>¡Registrate tu CV con nosotros para que todos nuestros afiliado puedan ver tu pontecial!</h3>
+        </ion-text>
+        <hr class="mb-5 hrr mt-2">
+  
+        <div class="w-100 d-flex">
+          <ion-button class="mx-auto" (click)="openModal =true"  shape="round">
+            Registrar CV
+          </ion-button>
+          <ion-button class="mx-auto" (click)="openModalItc =true" color="secondary"  shape="round">
+          Registrar CV Candidato ITC
+          </ion-button>
+        </div>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </div>
+
+
+  <div class="fondoa">
+    <div class="w-100 h-100 d-flex" style="min-height: 60vh;">
+      <ion-card class="m-auto" style="width: 100vh; min-height: 50vh;">
+        <ion-card-header>
+          <ion-card-title>
+            <h1 class="h1 text-center"><strong class="h2 text-center" style="font-weight: bolder;">Políticas de contratación</strong></h1> 
+            <div class="d-flex " style="background-color: white;">       <hr  class="mb-1 mx-auto mt-2"></div></ion-card-title>
+        
+        </ion-card-header>
+        <ion-card-content style="text-align: justify;" class="p-4">
+         Congruente con sus principios de Responsabilidad Social Empresarial y con las disposiciones emitidas por la Organización Internacional del Trabajo (OIT) y la Norma Mexicana NMX-R- 025-SCFI-2015, referentes a la Igualdad Laboral y combate contra la Discriminación en materia de empleo y ocupación, la Cámara Mexicana de la Industria de la Construcción (CMIC) promueve y garantiza la igualdad de oportunidades en sus procesos de reclutamiento, selección y capacitación del personal, evitando cualquier tipo de discriminación (género, raza, religión, edad, condición social, preferencia sexual, discapacidad, etc.). <br> <br>
+
+De esta manera, la CMIC busca integrar colaboradores con vocación profesional, cuyas competencias sean acordes a las exigencias del perfil de puesto, misión, visión, valores y objetivos institucionales, a través de procedimientos de inclusión transparentes y no discriminatorios.
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="d-flex pt-5 w-100 px-5 px-md-0">
+    <ion-card class="shadow mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0" style="min-height: 50vh;" >
+           <img src="../../../../../assets/56.jpg" class="h-100 p-0" alt="" style="min-height: 50vh;" >
+        </div>
+        <div class="col-md-6 d-flex ">
+       <div class="m-auto container">
+        <ion-text class="ion-margin-vertical" color="dark">
+          <h3 ><strong>Prácticas Profesionales y Servicio Social</strong></h3>
+        </ion-text>
+        <br>
+        <ion-text color="dark" class="mt-3">
+          <h3>Eres estudiante y te interesa trabajar en el sector de la industria de la construcción, ¡acércate a la CMIC!</h3>
+        </ion-text>
+        <hr class="mb-5 hrr mt-2">
+  
+        <ion-button color="dark" fill="clear" class="my-1 ion-text-lowercase">
+          <ion-icon slot="start" name="mail" color="primary"></ion-icon>
+           <strong>comunicacioncmic.cdmx@cmic.org</strong>
+        </ion-button>
+        <br>
+        <ion-button color="dark" fill="clear" class="my-1">
+          <ion-icon slot="start" name="call" color="primary"></ion-icon>
+          <strong>  55 5424 7463</strong>
+        </ion-button>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 my-3 mx-auto text-center">
+        <img src="../../../../../assets/logo-icic2.png" alt="">
+      </div>
+      <div class="col-md-3 my-3 mx-auto text-center">
+        <img src="../../../../../assets/logo-itc-3.png" alt="">
+      </div>
+      <div class="col-md-3 my-3 mx-auto text-center">
+        <img src="../../../../../assets/logo-fic2.png" alt="">
+      </div>
+    </div>
+  </div>
+  
+
+<web-footer></web-footer>
+
+
+
+<ion-modal [isOpen]="openModal" trigger="open-modal" (willDismiss)="openModal=false">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+          <ion-button (click)="openModal=false">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class=" h-100" [fullscreen]="true">
+        <div class="modal-fondo">
+          <div class="d-flex flex-column h-100 fondoo">
+            <h5 class="text-white text-center mt-3">
+              <span class="h1 my-2" style="font-weight: bold;"> 
+                Postúlate
+              </span>
+            </h5>
+            <div class="d-flex" >
+              <div class="mx-auto my-2" style=" width: 100px;border-bottom: 2px solid #FB041C;">
+              </div>
+            </div>
+           <div class="container">
+            <ion-card class="p-4" style="background-color: rgba(255, 255, 255, 0.9);">
+              <form [formGroup]="participanteForm">
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="nombre"  label="Nombre" labelPlacement="stacked" type="text" ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="telefono" label="Teléfono" labelPlacement="stacked" type="text" ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="correo" label="Email" labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="alcaldia" label="Lugar de Residencia" placeholder="Dentro de la Ciudad de México " labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="area" label="Área de especialidad" labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="experiencia" label="Experiencia" placeholder="Ingrese sus años de experiencia" labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="sueldo" label="Ingrese su Rango Salarial Esperado" placeholder="Ingrese sus años de experiencia" labelPlacement="stacked"  ></ion-input>
+              
+                <ion-select class="my-3" multiple="true" fill="outline" mode="md" formControlName="idiomas" label="Idiomas" labelPlacement="stacked" >
+                  <ion-select-option value="Español">Español</ion-select-option>
+                  <ion-select-option value="Inglés">Inglés</ion-select-option>
+                  <ion-select-option value="Francés">Francés</ion-select-option>
+                  <ion-select-option value="Portugués">Portugués</ion-select-option>
+                  <ion-select-option value="Alemán">Alemán</ion-select-option>
+                  <ion-select-option value="Ruso">Ruso</ion-select-option>
+                  <ion-select-option value="Chino">Chino</ion-select-option>
+                  <ion-select-option value="Japonés">Japonés</ion-select-option>
+                  <ion-select-option value="Otros">Otros</ion-select-option>
+                </ion-select>
+                <ion-textarea class="my-3" rows="10" formControlName="competencias" fill="outline" mode="md" label="Competencias" labelPlacement="stacked" ></ion-textarea>
+              </form>
+              <ion-button (click)="click()" shape="round" [color]="file.uri ? 'success' : 'dark'" >
+                <ion-label>{{file.uri ? 'Archivo Cargado' : 'Subir Currículum'}}</ion-label>
+                <input id="curri"  type="file" accept=".pdf" (change)="onFileSelected($event)" style="display: none;">
+              </ion-button>
+              
+              <div class="d-flex">
+                <ion-button [disabled]="participanteForm.invalid && file.uri.length === 0" class="mx-auto" (click)="send()"  shape="round">
+                  Enviar
+                 </ion-button>
+              </div>
+            </ion-card>
+           </div>
+          </div>
+        </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+
+<ion-modal [isOpen]="openModalItc" trigger="open-modal" (willDismiss)="openModalItc=false">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+          <ion-button (click)="openModalItc=false">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class=" h-100" [fullscreen]="true">
+        <div class="modal-fondo">
+          <div class="d-flex flex-column h-100 fondoo">
+            <h5 class="text-white text-center mt-3">
+              <span class="h1 my-2" style="font-weight: bold;"> 
+                Postúlate
+              </span>
+            </h5>
+            <div class="d-flex" >
+              <div class="mx-auto my-2" style=" width: 100px;border-bottom: 2px solid #FB041C;">
+              </div>
+            </div>
+           <div class="container">
+            <ion-card class="p-4" style="background-color: rgba(255, 255, 255, 0.9);">
+              <form [formGroup]="participanteFormItc">
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="nombre"  label="Nombre" labelPlacement="stacked" type="text" ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="telefono" label="Teléfono" labelPlacement="stacked" type="text" ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="correo" label="Email" labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="alcaldia"label="Lugar de Residencia" placeholder="Dentro de la Ciudad de México "  labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="experiencia" label="Experiencia" placeholder="Ingrese sus años de experiencia" labelPlacement="stacked"  ></ion-input>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="sueldo" label="Ingrese su Rango Salarial Esperado" placeholder="Ingrese sus años de experiencia" labelPlacement="stacked"  ></ion-input>
+              
+                <ion-select class="my-3" multiple="true" fill="outline" mode="md" formControlName="area" label="Idiomas" labelPlacement="stacked" >
+                  <ion-select-option value="Español">Español</ion-select-option>
+                  <ion-select-option value="Inglés">Inglés</ion-select-option>
+                  <ion-select-option value="Francés">Francés</ion-select-option>
+                  <ion-select-option value="Portugués">Portugués</ion-select-option>
+                  <ion-select-option value="Alemán">Alemán</ion-select-option>
+                  <ion-select-option value="Ruso">Ruso</ion-select-option>
+                  <ion-select-option value="Chino">Chino</ion-select-option>
+                  <ion-select-option value="Japonés">Japonés</ion-select-option>
+                  <ion-select-option value="Otros">Otros</ion-select-option>
+                </ion-select>
+                <ion-select class="my-3"  fill="outline" mode="md" formControlName="area" label="Carrera" labelPlacement="stacked" >
+                  <ion-select-option value="Ingeniería de Construcción">Ingeniería de Construcción </ion-select-option>
+                  <ion-select-option value="Arquitecto Contructor">Arquitecto Contructor</ion-select-option>
+                  <ion-select-option value="Admin. de la Construcción">Admin. de la Construcción</ion-select-option>
+                  <ion-select-option value="Construcción">Construcción</ion-select-option>
+                  <ion-select-option value="Construcción de Vías Terrestres">Construcción de Vías Terrestres</ion-select-option>
+                  <ion-select-option value="Valuación Inmobiliaria">Valuación Inmobiliaria</ion-select-option>
+                  <ion-select-option value="Gerencia de Proyectos">Gerencia de Proyectos</ion-select-option>
+                  <ion-select-option value="Negocios de la Construcción">Negocios de la Construcción</ion-select-option>
+                  <ion-select-option value="Diseño y Contrucción de Vías Férreas">Diseño y Contrucción de Vías Férreas</ion-select-option>
+                  <ion-select-option value="Sistemas Energéticos">Sistemas Energéticos</ion-select-option>
+                  <ion-select-option value="Almacenamiento de Hidrocarburos">Almacenamiento de Hidrocarburos</ion-select-option>
+                </ion-select>
+                <ion-input class="my-3" fill="outline" mode="md" formControlName="matricula" label="Matrícula/Número de Estudiante"  labelPlacement="stacked"  ></ion-input>
+                <ion-textarea class="my-3" rows="10" formControlName="competencias" fill="outline" mode="md" label="Competencias" labelPlacement="stacked" ></ion-textarea>
+              </form>
+              <ion-button (click)="click()" shape="round" [color]="file.uri ? 'success' : 'dark'" >
+                <ion-label>{{file.uri ? 'Archivo Cargado' : 'Subir Currículum'}}</ion-label>
+                <input id="curri"  type="file" accept=".pdf" (change)="onFileSelected($event)" style="display: none;">
+              </ion-button>
+              
+              <div class="d-flex">
+                <ion-button [disabled]="participanteFormItc.invalid && file.uri.length === 0" class="mx-auto" (click)="sendItc()"  shape="round">
+                  Enviar
+                 </ion-button>
+              </div>
+            </ion-card>
+           </div>
+          </div>
+        </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+
+</ion-content>
+

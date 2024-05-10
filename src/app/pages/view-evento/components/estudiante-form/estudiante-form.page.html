@@ -1,0 +1,42 @@
+<form  [formGroup]="usuarioForm"  *ngIf="usuarioForm">
+   
+  <ion-item>
+    <ion-input labelPlacement="floating"   formControlName="nombre" type="text">
+      <div slot="label">Nombre Completo <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"   formControlName="telefono" type="text">
+      <div slot="label">Teléfono <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"  formControlName="email" type="email">
+      <div slot="label">Correo <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-select   formControlName="estado" [cancelText]="'Cerrar'" okText="Seleccionar"  placeholder="Seleccione">
+      <div slot="label">Estado de Origen </div>
+      <ion-select-option *ngFor="let estado of estados" [value]="estado.id">{{estado.nombre}}</ion-select-option>
+      <ion-select-option *ngIf="extranjero"  class="border-top" [value]="extranjero.id">{{extranjero.nombre}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item >
+    <ion-input labelPlacement="floating"  formControlName="curp" type="text">
+      <div slot="label">CURP <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-text >Suba su credencial estudiantil o documento que lo avale <ion-text color="danger">*</ion-text></ion-text> <br>
+    <ion-button (click)="uploads()" expand="block"  shape="round">
+      Subir Credencial
+    </ion-button>
+  </ion-item>
+
+  <ion-button (click)="emit()" expand="block" slot="end"  shape="round" type="submit" [disabled]="usuarioForm.invalid || disabled"   class="mt-3">
+    Registrarse
+  </ion-button>
+  
+</form>

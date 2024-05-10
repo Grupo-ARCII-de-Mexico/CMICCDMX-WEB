@@ -1,0 +1,146 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true">
+
+  <div class=" my-5" *ngIf="boletin">
+    <div class="container mb-5">
+      <swiper-container
+ 
+      id="mySwiper"
+       #mySwiper [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+        [pagination]="paginationConfig"
+      
+      >
+          <swiper-slide  *ngFor="let item of imgFilter " class="swiper-slide pointer" style="
+          background-image: url({{uri + item}});
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          backdrop-filter: blur(60px);
+          max-heigth:70vh;
+          ">
+           
+          </swiper-slide>
+          <swiper-slide *ngIf="boletin.imagen" class="swiper-slide pointer" style="
+          background-image: url({{uri + boletin.imagen}});
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          backdrop-filter: blur(60px);
+          max-heigth:70vh;
+          ">
+           
+          </swiper-slide>
+      
+        </swiper-container>
+
+        
+        <br><br><br style="height:50px">
+        <br style="height:50px">
+        <div class="ion-text-center">
+          <div class="titulo"><strong>{{boletin.titulo}}</strong></div>
+          
+        </div>
+        <br><br>
+  <div *ngIf="boletin" [innerHTML]="safe(boletin.informacion)" class="m-4 acomodo">
+
+</div>  
+
+<div class="container">
+  <hr>
+  <div class="d-flex my-1 ">
+ 
+    <span class="ms-3"> Ciudad de México, <strong>{{mon(boletin.fecha)}}</strong> </span>
+    <span class="ms-auto"> De: <strong>  Comunicación CMIC </strong></span>
+
+  </div>
+  <hr>
+</div>
+      
+    </div>
+  
+  </div>
+
+  <div class="container my-5" *ngIf="boletines.length > 0">
+    <div class="text-center d-flex flex-column titulo">
+      <h1 style="font-weight: bold;" class="mb-2 titulo"> Boletines relacionados</h1>
+      <hr class="mb-3 mx-auto">
+    </div>
+    <swiper-container 
+    class="d-flex"
+    [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+    [pagination]="paginationConfig"
+    #SwiperBol
+    id="SwiperBol"
+    [breakpoints]="breakpoints"
+  
+  >
+     <swiper-slide *ngFor="let item of boletines" class="d-flex my-4 mx-auto">
+      <ion-card class="mx-auto w-90">
+        <ion-card-header
+        style="
+        background-image: url({{uri+item.imagen}});
+        background-position: center;
+        height: 200px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        ">
+        </ion-card-header>
+        <ion-card-content>
+         <h4 class="text-black h3 text-start my-3" >{{item.titulo.slice(0,50)}}{{item.titulo.length >= 50 ? '...':''}}</h4>
+         <p> {{mon(item.createdAt)}}</p>
+          <div class="d-flex my-2">
+            <ion-button routerLink="/website/boletin/{{item.identificador}}" routerLinkActive="router-link-active"  class="mx-auto" color="primary" shape="round">
+              Leer más
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+  
+  
+    </swiper-container>
+  
+    <ion-buttons slot="start">
+      <ion-button color="primary" fill="clear" (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" fill="clear" (click)="next()">
+        <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="d-flex pt-5 w-100 px-5 px-md-0">
+    <ion-card class="shadow mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0" >
+           <img src="../../../../../assets/56.jpg" class="h-100 p-0" alt="">
+        </div>
+        <div class="col-md-6 d-flex ">
+       <div class="m-auto container">
+        <ion-text class="ion-margin-vertical" color="dark">
+          <h3 >Para cualquier duda o aclaración favor de <br>
+          contactar a nuestra área técnica con : </h3>
+        </ion-text>
+        <h1  class="mb-2  text-black mt-3"> <strong>Gerente Técnico</strong></h1>
+        <hr class="mb-5 hrr">
+  
+        <ion-button color="dark" fill="clear" class="my-1 ion-text-lowercase">
+          <ion-icon slot="start" name="mail" color="primary"></ion-icon>
+           <strong> gerente.tecnico@cmiccdmx.org</strong>
+        </ion-button>
+        <br>
+        <ion-button color="dark" fill="clear" class="my-1">
+          <ion-icon slot="start" name="call" color="primary"></ion-icon>
+          <strong>   55 5424 7400 Ext. 7502</strong>
+        </ion-button>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </div>
+  <web-footer></web-footer>
+</ion-content>

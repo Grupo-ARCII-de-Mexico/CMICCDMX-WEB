@@ -1,0 +1,168 @@
+
+
+<ion-card class="shadow p-3 col-11 col-md-6 mx-auto my-3" *ngIf="view">
+  <ion-text class="text-center my-3 " color="primary">
+    <h3> <b>DATOS DE LA EMPRESA</b> </h3>
+   </ion-text>
+   <form (ngSubmit)="save()" [formGroup]="contactoForm">
+    <div class="container">
+      <ion-item [color]="editArray[0] ? '' : 'medium'">
+        <ion-input required [debounce]="300" (ionInput)="a($event)" [readonly]="!editArray[0]" [ngClass]="{edit : 'disable'}" formControlName="afiliado" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            No. Afiliado
+            <ion-text color="danger">
+            *
+            </ion-text></div>
+        </ion-input>
+        <ion-button  [color]="editArray[0] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[0] =!editArray[0]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+     <ion-item [color]="editArray[1] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[1]" formControlName="empresa" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            Nombre de Empresa
+            <ion-text color="danger">
+            *
+            </ion-text></div>
+        </ion-input>
+        <ion-button [color]="editArray[1] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[1] =!editArray[1]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item  [color]="editArray[2] ? '' : 'medium'">
+        <ion-select required formControlName="denominacion"   okText="CONFIRMAR" cancelText="CERRAR"  placeholder="Seleccione">
+          <div slot="label"> 
+            Denominación
+            <ion-text color="danger">
+            *
+            </ion-text></div>
+          <ion-select-option value="S.A">S.A</ion-select-option>
+          <ion-select-option value="S.A DE C.V">S.A DE C.V</ion-select-option>
+          <ion-select-option value="S. DE R.L DE C.V">S. DE R.L DE C.V</ion-select-option>
+          <ion-select-option value="S.C">S.C</ion-select-option>
+          <ion-select-option value="S.A.P.I DE C.V">S.A.P.I DE C.V</ion-select-option>
+          <ion-select-option value="S.A DE C.V SOFOM EUR">S.A DE C.V SOFOM EUR</ion-select-option>
+          <ion-select-option value="S.C DE R.L DE C.V">S.C DE R.L DE C.V</ion-select-option>
+          <ion-select-option value="S.C DE R.L">S.C DE R.L </ion-select-option>
+          <ion-select-option value="S. DE R.L">S. DE R.L</ion-select-option>
+          <ion-select-option value="S. DE R.L.M.I">S. DE R.L.M.I</ion-select-option>
+        </ion-select>
+        <ion-button [color]="editArray[2] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[2] =!editArray[2]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item [color]="editArray[3] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[3]" formControlName="rfc" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            R.F.C
+            <ion-text color="danger">
+              *
+              </ion-text>
+          </div>
+        </ion-input>
+        <ion-button [color]="editArray[3] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[3] =!editArray[3]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    
+      <ion-item [color]="editArray[4] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[4]" formControlName="estado" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            Estado
+            <ion-text color="danger">
+              *
+              </ion-text>
+          </div>
+        </ion-input>
+        <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item [color]="editArray[4] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[4]" formControlName="calle" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            Calle
+            <ion-text color="danger">
+              *
+              </ion-text>
+          </div>
+        </ion-input>
+        <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    
+      <ion-item [color]="editArray[4] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[4]" formControlName="colonia" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            Colonia
+            <ion-text color="danger">
+              *
+              </ion-text>
+          </div>
+        </ion-input>
+        <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    
+      <ion-item [color]="editArray[4] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[4]" formControlName="municipio" type="text" labelPlacement="floating">
+          <div slot="label"> 
+            Alcaldía / Municipio
+            <ion-text color="danger">
+              *
+              </ion-text>
+          </div>
+        </ion-input>
+        <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item [color]="editArray[4] ? '' : 'medium'">
+        <ion-input required [readonly]="!editArray[4]" formControlName="cp" type="number" labelPlacement="floating">
+          <div slot="label"> 
+            Código Postal
+            <ion-text color="danger">
+              *
+              </ion-text>
+          </div>
+        </ion-input>
+        <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    
+
+      <ion-item [color]="editArray[4] ? '' : 'medium'">
+        <ion-input label="Página Web" [readonly]="!editArray[4]" formControlName="web" type="text" labelPlacement="floating">
+   
+        </ion-input>
+        <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    
+    </div>
+
+   </form>
+   <div class="container" *ngIf="negocio">
+    <ion-item *ngFor="let item of negocio.documentos; let i = index">
+      <ion-label>
+        {{item.texto}} 
+        <p>
+          {{item.descripcion}} <br>
+          (formato PDF)
+        </p>
+      
+      </ion-label>
+      <ion-button (click)="click(item.texto)" expand="block" [color]="files[i]?.uri ? 'success' : 'primary'" fill="clear" slot="end">
+        <ion-label>{{files[i].uri ? 'Archivo Cargado' : 'Seleccionar archivo'}}</ion-label>
+        <input [id]="item.texto" type="file" accept=".pdf" (change)="onFileSelected($event, i)" style="display: none;">
+      </ion-button>
+      
+    </ion-item>
+   </div>
+</ion-card>

@@ -1,0 +1,62 @@
+
+  <ion-router-outlet id="main-web" [animated]="false"></ion-router-outlet>
+  <ion-menu color="secondary" contentId="main-web" menuId="website"side="start" type="overlay">
+    <ion-content color="secondary">
+      <ion-img src="../../../../../assets/logo.png"></ion-img>
+        
+      <ion-item class="mx-auto px-0 " (click)="closemenu()" button routerLink="/website/oportunidad-negocio" color="dark"  lines="none">
+        <ion-label>Oportunidades de Negocio</ion-label>
+      </ion-item>
+      <ion-item class="mx-auto px-0 " (click)="closemenu()" button routerLink="/website/eventos" color="dark"  lines="none">
+        <ion-label>Eventos</ion-label>
+      </ion-item>
+      <ion-item class="mx-auto px-0 " (click)="closemenu()" button routerLink="/website/bolsa-trabajo" color="dark"  lines="none">
+        <ion-label>Bolsa de Trabajo</ion-label>
+      </ion-item>
+      <ion-item class="mx-auto px-0 "  (click)="closemenu()" button routerLink="/website/licitaciones" color="dark"  lines="none">
+        <ion-label>Licitaciones</ion-label>
+      </ion-item>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="secondary">
+            <ion-label>Instituciones</ion-label>
+          </ion-item>
+          <div  slot="content" >
+            <ion-item (click)="closemenu()" button routerLink="/website/instituciones/icic" class="mx-auto px-0 " button color="dark"  lines="none">
+              <ion-label>Capacitación Ejecutiva (ICIC)</ion-label>
+            </ion-item>
+            <ion-item (click)="closemenu()" button routerLink="/website/instituciones/itc" class="mx-auto px-0 " button color="dark"  lines="none">
+              <ion-label>Oferta Educativa (ITC)</ion-label>
+            </ion-item>
+            <ion-item (click)="closemenu()" button routerLink="/website/instituciones/fic" class="mx-auto px-0 " button color="dark"  lines="none">
+              <ion-label>Instituto Certificador (FIC)</ion-label>
+            </ion-item>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="secondary">
+            <ion-label>CMIC</ion-label>
+          </ion-item>
+          <div  slot="content" >
+            <ion-item (click)="closemenu()" button routerLink="/website/cmic" class="mx-auto px-0 " button color="dark"  lines="none">
+              <ion-label>Sobre Nosotros</ion-label>
+            </ion-item>
+            <ion-item (click)="closemenu()" button routerLink="/website/cmic/directorio" class="mx-auto px-0 " button color="dark"  lines="none">
+              <ion-label>Directorio</ion-label>
+            </ion-item>
+            <ion-item (click)="closemenu()" button routerLink="/website/cmic/contacto" class="mx-auto px-0 " button color="dark"  lines="none">
+              <ion-label>Contáctanos</ion-label>
+            </ion-item>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <ion-item (click)="closemenu()"class="mx-auto px-0 " button routerLink="/website/foros" color="dark"  lines="none">
+        <ion-label>Foros</ion-label>
+      </ion-item>
+      <ion-item (click)="closemenu()" button routerLink="/website/afiliate" class="mx-auto px-0 " button color="primary"  lines="none">
+        <ion-label>Afíliate</ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>

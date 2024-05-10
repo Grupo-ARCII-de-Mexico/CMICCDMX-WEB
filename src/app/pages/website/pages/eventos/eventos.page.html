@@ -1,0 +1,125 @@
+<web-header></web-header>
+
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="headerStatusService.setBooleanStatus($event)">
+
+  <div class="container my-5">
+    <div class="text-center d-flex flex-column titulo">
+      <h1 style="font-weight: bold;" class="mb-2 titulo"> Próximos Eventos</h1>
+      <hr class="mb-3 mx-auto">
+    </div>
+    <div class="row">
+      <div class="col-md-3 my-2 mx-auto">
+        <ion-datetime (ionChange)="viewSelect($event)" [highlightedDates]="highlightedDates" presentation="date" class="mx-auto" max="{{year}}-01-01"></ion-datetime>
+      </div>
+      <div class="col-md-9 my-2" *ngIf="selectedEventos.length>0" routerLink="/evento/{{selectedEventos[0].identificador}}">
+        <div class="w-100 h-100 image-container"
+        style="
+        background-image: url({{uri+selectedEventos[0].imagen}});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 20vh;
+        ">
+          <div class="bg-l h-100 d-flex image-overlay flex-column">
+            <h3 class="text-white  mt-5 image-text titulo"> {{selectedEventos[0].titulo.slice(0,40)}}{{selectedEventos[0].titulo.length > 40 ? '...' : ''}} </h3> 
+            <h3 class="text-white mb-auto image-text h5 "> {{fecha(selectedEventos[0].fechaInicio)}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 my-2" routerLink="/evento/{{item.identificador}}" *ngFor="let item of selectedEventos.slice(1,selectedEventos.length);let i = index">
+        <div class="w-100 h-100 image-container"
+        style="
+        background-image: url({{uri+item.imagen}});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 20vh;
+        ">
+          <div class="bg-l  d-flex image-overlay flex-column">
+            <h3 class="text-white  mt-1 image-text  h5"> <strong> {{item.titulo.slice(0,40)}}{{item.titulo.length > 40 ? '...' : ''}}</strong></h3> 
+            <h3 class="text-white mb-auto image-text p "> {{fecha(item.fechaInicio)}}</h3>
+          </div>
+        </div>
+      </div>
+ 
+
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="text-center d-flex flex-column titulo">
+      <h1 style="font-weight: bold;" class="mb-2 titulo"> Boletines</h1>
+      <hr class="mb-3 mx-auto">
+    </div>
+    <swiper-container 
+    class="d-flex"
+    [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+    [pagination]="paginationConfig"
+    #SwiperBol
+    id="SwiperBol"
+    [breakpoints]="breakpoints"
+  
+  >
+  <swiper-slide *ngFor="let item of boletines" class="d-flex my-4">
+    <ion-card class="mx-auto w-90">
+      <ion-card-header
+      style="
+      background-image: url({{uri2+item.imagen}});
+      background-position: center;
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      ">
+      </ion-card-header>
+      <ion-card-content>
+       <h4 class="text-black h3 text-start my-3" >{{item.titulo.slice(0,50)}}{{item.titulo.length >= 50 ? '...':''}}</h4>
+       <p> {{fecha(item.createdAt)}}</p>
+        <div class="d-flex my-2">
+          <ion-button routerLink="/website/boletin/{{item.identificador}}" routerLinkActive="router-link-active"  class="mx-auto" color="primary" shape="round">
+            Leer más
+           </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+   </swiper-slide>
+  
+    </swiper-container>
+  
+    <ion-buttons slot="start">
+      <ion-button color="primary" fill="clear" (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" fill="clear" (click)="next()">
+        <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+  <div class="d-flex pt-3  w-100">
+    <ion-card class=" mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0" >
+           <img src="../../../../../assets/15.jpg" class="h-100 p-0 " style="max-height: 400px;" alt="">
+        </div>
+        <div class="col-md-6 d-flex">
+       <div class="m-auto container">
+        <ion-text class="ion.margin-vertical" color="primary">
+          <h5><strong>CMIC Ciudad de México</strong></h5>
+        </ion-text>
+        <h1  class="mb-2 titulo text-black"> Afíliate ahora a la CMIC y <br> disfruta todos los beneficios</h1>
+        <hr class="mb-5 ">
+
+        <ion-button routerLink="/website/afiliate" class="mb-3" shape="round">
+          Afíliate
+        </ion-button>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </div>
+
+<web-footer></web-footer>
+</ion-content>

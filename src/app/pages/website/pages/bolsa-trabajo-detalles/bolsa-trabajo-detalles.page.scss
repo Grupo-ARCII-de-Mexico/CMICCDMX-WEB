@@ -1,0 +1,141 @@
+.fondo{
+    background-image: url('../../../../../assets/44.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 10vh;
+    color: white;
+  } 
+  img{
+    max-height: 150px;
+    width: 250px;
+    padding: 10px;
+  }
+
+  .modal-fondo{
+    background-image: url('../../../../../assets/56.jpg');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+  }
+
+.fondoo {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  .file-select {
+    position: relative;
+    display: inline-block;
+    border-radius: 30px;
+  }
+  
+  .file-select::before {
+    background-color: var(--ion-color-dark);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    content: 'Anexar Currículum'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+  }
+  
+
+  .titulo{
+    font-size: 32px!important;
+    font-weight: bold;
+  }
+  .fondo{
+    background-image: url('../../../../../assets/52.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vh;
+  } 
+  .bg-l{
+    background: rgb(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    //background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 96%)!important;
+  }
+  ion-img{
+    width: 150px;
+  }
+
+ 
+
+  .aa{
+    max-width: 300px;
+  }
+
+
+.hrr{
+    border-color: var(--ion-color-primary);
+    background-color: var(--ion-color-primary);
+    border-width: 2px;
+    margin: 0;
+    width: 100px;
+    opacity: 1;
+    margin-right:auto; /* Centra horizontalmente el <hr> */
+}
+
+.hrrr {
+  border-color: var(--ion-color-primary);
+  background-color: var(--ion-color-primary);
+  border-width: 1px;
+  width: 100%;
+  opacity: 1;
+}
+
+
+.info{
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(241,241,241,1) 50%);
+min-height: 70vh;
+font-weight: bold;
+}
+
+.a{
+    border-color: var(--ion-color-primary)!important;
+    border:1px;
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 505px;
+}
+
+.f{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hr{
+
+    margin-right:auto; /* Centra horizontalmente el <hr> */
+}
+.zz{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.titulo{
+    font-size: 32px!important;
+    font-weight: bold;
+  }
+
+
+  .gray{
+    background-color:  #f1f1f1;
+   }
+ 

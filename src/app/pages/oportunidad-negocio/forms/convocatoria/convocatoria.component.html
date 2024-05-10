@@ -1,0 +1,19 @@
+
+
+<ion-card class="shadow p-3  col-11 col-md-6 mx-auto my-3" *ngIf="convocatoria">
+  <ion-text class="text-center my-3 mt-5" color="primary">
+    <h3> <b class="ion-text-uppercase">Convocatoria </b> </h3>
+
+   </ion-text>
+   <div
+   class="my-3 text-center"
+   [innerHTML]="convocatoria">
+
+   </div>
+
+   <div class="my-3" *ngIf="documento">
+     <ion-text color="primary" >
+       <p class="text-center  text-black">Para más información puede descargar  <a [href]="uri+documento" download="informacion.pdf">el siguiente documento</a> </p>
+     </ion-text>
+   </div>
+</ion-card>

@@ -1,0 +1,119 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="headerStatusService.setBooleanStatus($event)">
+<div class="fondo" style="
+  background-image: url(../../../../../assets/15.jpg);
+  background-position: bottom;
+  background-size: cover;">
+    <div class="  w-100 bgg w-100 h-100 d-flex">
+      <div class="m-auto">
+        <p class="mega text-center text-white">UNA ORGANIZACIÓN DE CLASE MUNDIA PARA EL IMPULSO DE LA INFRAESTRUCTURA NACIONAL</p>
+        <h1 class="my-3 m hhh text-white"> La Cámara Mexicana de la industria de la cosntrucción (CMIC), constituida en 1953, es una institución de interés público, autónoma, con personalidad jurídica y patrimonio propio, que tiene como objeto, entre otros, representar, defender y fomentar los intereses generales de los industriales de la construcción</h1>
+
+      </div>
+      
+    </div>
+   
+</div>
+<div class=" mb-5  flo w-100">
+  <div class="row d-flex w-100 mt-4">
+    <div class="col-xl-4 my-3 mx-auto text-start d-flex">
+      <img class="icono d-none d-lg-block" src="../../../../../assets/Iconos/6.png" alt="">
+        <ion-card mode="ios" class="p-5 pb-0 mx-auto">
+          <img class="icono ab d-block d-lg-none" src="../../../../../assets/Iconos/6.png" alt="">
+          <h1 class="titulo text-black">Misión</h1>
+          <hr class="mx-auto mx-md-0 ">
+          <p class="text-justify mt-3"> Representar y defender los interedes de los industriales de la construcción, liderando y brindando servicios de vanguardia, para impulsar una industria sustentable, innovadora y altamente competitiva, que contribuya significativamente al desarrollo de México</p>
+        </ion-card>
+ 
+    </div>
+    <div class="col-xl-4 my-3 mx-auto text-start d-flex">
+      <img class="icono aa d-none d-lg-block" src="../../../../../assets/Iconos/2.png" alt="">
+        <ion-card mode="ios" class="p-5 pb-0 mx-auto">
+          <img class="icono ab d-block d-lg-none" src="../../../../../assets/Iconos/2.png" alt="">
+          <h1 class="titulo text-black">Visión</h1>
+          <hr class="mx-auto mx-md-0 ">
+          <p class="text-justify mt-3"> Representar y defender los interedes de los industriales de la construcción, liderando y brindando servicios de vanguardia, para impulsar una industria sustentable, innovadora y altamente competitiva, que contribuya significativamente al desarrollo de México</p>
+        </ion-card>
+ 
+    </div>
+    <div class="col-xl-4 my-3 mx-auto text-start d-flex">
+      <img class="icono ab d-none d-lg-block" src="../../../../../assets/Iconos/4.png" alt="">
+        <ion-card mode="ios" class="p-5 mx-auto">
+          <img class="icono ab d-block d-lg-none" src="../../../../../assets/Iconos/4.png" alt="">
+          <h1 class="titulo text-black">Valores</h1>
+          <hr class="mx-auto mx-md-0 ">
+          <p class="text-justify mt-3"> Representar y defender los interedes de los industriales de la construcción, liderando y brindando servicios de vanguardia, para impulsar una industria sustentable, innovadora y altamente competitiva, que contribuya significativamente al desarrollo de México</p>
+        </ion-card>
+ 
+    </div>
+  </div>
+</div>
+
+
+<div class="container  mb-4 margin-top">
+  <div class="titulo text-center"> CMIC Delegación Ciudad de México</div>
+  <div class="d-flex">
+    <hr class="mx-auto">
+  </div>
+  <div class="text-center my-3">
+    La CMIC Delegación Ciudad de México, cuenta con más de 400 afiliados de empresas connotadas, que cubren las necesidades de infraestructura, desarrollo y construcción que demanda la ciudad. Así, la CMIC CDMX, funge como representante de los industriales del sector, en esta circunscripción, en pro de la mejora y crecimiento de la infraestructura de la ciudad y calidad de vida de sus habitantes.
+  </div>
+
+</div>
+
+
+<div class="fondo-gray py-5">
+  <h1 class="text-center titulo  ">
+   ¡Forma parte de nuestras COMISIONES MIXTAS y GRUPOS DE TRABAJO!
+  </h1>
+  <div class="d-flex">
+    <hr class="mx-auto">
+  </div>
+
+  <swiper-container 
+  class="d-flex"
+  [autoplay]="{delay: 1000, pauseOnMouseEnter:true}"
+  [pagination]="paginationConfig"
+  [slidesPerView]="3"
+  [breakpoints]="breakpoints"
+  [loop]="true"
+
+>  <swiper-slide (click)="go(item?.url)"  *ngFor="let item of comisiones; let i = index">  
+  <div class=" mx- tarjeta px-0 my-3"
+  style="
+   background-image: url({{url+item.imagen}});
+  background-size: cover;
+  background-position: center;
+  "
+  >
+  <div [ngClass]="{'fnegro': i%2 === 0, 'frojoq':i%2 !== 0}" class=" w-100 h-100 d-flex">
+    <h1 class="m-auto text-center carta">
+      {{item.texto}}
+    </h1>
+  </div>
+</div>
+
+</swiper-slide>
+
+
+ 
+  </swiper-container>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-icic2.png" alt="">
+    </div>
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-itc-3.png" alt="">
+    </div>
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-fic2.png" alt="">
+    </div>
+  </div>
+</div>
+
+ <web-footer></web-footer>
+</ion-content>

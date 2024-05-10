@@ -1,0 +1,11 @@
+.hide-placeholder::-webkit-input-placeholder {
+    visibility: hidden !important;
+  }
+  
+  .hide-placeholder:-ms-input-placeholder {
+    visibility: hidden !important;
+  }
+  
+  .hide-placeholder::-ms-input-placeholder {
+    visibility: hidden !important;
+  }

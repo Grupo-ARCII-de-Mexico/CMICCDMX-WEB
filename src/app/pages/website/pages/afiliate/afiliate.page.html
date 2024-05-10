@@ -1,0 +1,1128 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="headerStatusService.setBooleanStatus($event)">
+  <div class="fondo d-flex">
+    <div class=" frojo w-100 d-flex flex-column">
+      <h1 class="titulo my-3 text-white mx-auto mt-auto"> Afíliate</h1>
+      <h2 class="mb-auto mx-auto  text-white text-center " style="font-weight: 100;">Únete a las más de 400 empresas afiliadas y conoce las áreas <br> de oportunidad que tenemos para ti</h2>
+      <p class="mt-15 ms-auto text-white me-4 mb-4"> Inicio / Afíliate</p>
+    </div>
+  
+  </div>
+  <div class="container">
+    <swiper-container 
+    class="d-flex"
+    [autoplay]="{delay: 10000, pauseOnMouseEnter:true}"
+    [pagination]="paginationConfig"
+    [slidesPerView]="3"
+    [breakpoints]="breakpoints"
+  
+  >
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Requisitos para</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">Afiliados persona física</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong>Copias:</strong></p>
+          </ion-text>
+
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Declaración anual 2023 y sello digital</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2"> 
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Identificación oficial vigente</strong></h6>
+            </ion-text>
+          </ion-item>
+    
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;"name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Constancia de situación fiscal actualizada a la fecha de facturación </strong></h6>
+            </ion-text>
+          </ion-item>
+
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Módulo de Afiliación que se le entregará en las oficinas de CMIC</strong></h6>
+            </ion-text>
+          </ion-item>
+
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Requisitos para</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">Afiliados persona moral</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong>Copias:</strong></p>
+          </ion-text>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary"  style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Acta Constitutiva</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Declaración anual 2023 y sello digital</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2"> 
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Identificación oficial vigente</strong></h6>
+            </ion-text>
+          </ion-item>
+    
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;"name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Constancia de situación fiscal actualizada a la fecha de facturación </strong></h6>
+            </ion-text>
+          </ion-item>
+
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Módulo de Afiliación que se le entregará en las oficinas de CMIC</strong></h6>
+            </ion-text>
+          </ion-item>
+
+
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Requisitos para</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">SIEM (Sistema de Información Empresarial Mexicano)</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong>Copias:</strong></p>
+          </ion-text>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary"  style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Formato SIEM</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Formato de pago CMIC</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2"> 
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Factura correspondiente al pago de la cuota de afiliación</strong></h6>
+            </ion-text>
+          </ion-item>
+    
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;"name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Constancia de situación fiscal actualizada a la fecha de facturación </strong></h6>
+            </ion-text>
+          </ion-item>
+
+
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Requisitos para</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">Asociado proveedor</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong>Copias:</strong></p>
+          </ion-text>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary"  style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Acta Constitutiva (primer registro)</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Identificación Oficial del Representante Legal</strong></h6>
+            </ion-text>
+          </ion-item>
+         
+    
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;"name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Constancia de situación fiscal actualizada a la fecha de facturación </strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2"> 
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Módulo de asociado 2023 debidamente requisitado y con firmas autógrafas del Representante Legal</strong></h6>
+            </ion-text>
+          </ion-item>
+
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Requisitos para</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">Asociado estudiantil</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong>Copias:</strong></p>
+          </ion-text>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary"  style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Constancia y/o acreditación de estudios</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Comprobante de domicilio</strong></h6>
+            </ion-text>
+          </ion-item>
+         
+    
+          <ion-item lines="none" class="ion-margin-vertical px-2">
+            <ion-icon color="primary" style="min-width: 25px;"name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Identificación oficial vigente</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2"> 
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Llenado de Módulo de asociado Estudiantil</strong></h6>
+            </ion-text>
+          </ion-item>
+          <ion-item lines="none" class="ion-margin-vertical px-2"> 
+            <ion-icon color="primary" style="min-width: 25px;" name="checkmark-circle"></ion-icon>
+            
+            <ion-text color="secondary" class="ms-3">
+              <h6><strong>Edad máxima 25 años</strong></h6>
+            </ion-text>
+          </ion-item>
+
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Se parte de nuestros</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">Esquemas de Patrocinio</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong style="font-size: 16px;">Conoce más de los esquemas de patrocinio que la Delegación CDMX, te ofrece para hacer más competitiva a tu empresa, ¡Contáctanos! </strong></p>
+          </ion-text>
+
+          <p class="my-3"><strong>Contacto:</strong></p>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('https://wa.me/message/X4K5OUNLKR7MC1?src=qr')">
+            <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">56 2569 2061</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('mailto:afiliacion@cmiccdmx.org')">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">afiliacion@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('mailto:coord.afiliacion@cmiccdmx.org')">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">coord.afiliacion@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('tel:5554247438')">
+            <ion-icon color="primary" name="call" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5424 7438</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('tel:5554247463')">
+            <ion-icon color="primary" name="call" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0"> 55 5424 7463
+              </h6>
+            </ion-text>
+          </div>
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+     <swiper-slide class="d-flex my-4">
+      <ion-card class="mx-auto shadow" mode="ios">
+   
+        <ion-card-content>
+          <ion-text color="secondary" >
+            <p class="my-3"><strong>Mejora tu</strong></p>
+          </ion-text>
+          <ion-text color="primary" class="text-start ps-0 my-2">
+            <h1  class="text-start" style="font-weight: bolder;">Alianza Comercial</h1>
+            <hr style="color: black; " class="mb-0">
+          </ion-text>
+
+          <ion-text color="secondary" class="ms-4">
+            <p><strong style="font-size: 16px;">¡Te acercamos a las empresas de la industria de la construcción de la CDMX! Desarrolla nuevas relaciones de negocio, Networking, B2B, ¡Contáctanos, generemos la alianza comercial que tu empresa necesita!
+            </strong></p>
+          </ion-text>
+
+          <p class="my-3"><strong>Contacto:</strong></p>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('https://wa.me/message/X4K5OUNLKR7MC1?src=qr')">
+            <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">56 2569 2061</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('mailto:afiliacion@cmiccdmx.org')">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">afiliacion@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('mailto:coord.afiliacion@cmiccdmx.org')">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">coord.afiliacion@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('tel:5554247438')">
+            <ion-icon color="primary" name="call" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5424 7438</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical" (click)="open('tel:5554247463')">
+            <ion-icon color="primary" name="call" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0"> 55 5424 7463
+              </h6>
+            </ion-text>
+          </div>
+
+          <div class="d-flex mt-5 mb-2">
+            <ion-button (click)="afiliate()" class="mx-auto" color="primary"   shape="round">
+              Afíliate
+             </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+     </swiper-slide>
+  
+     
+    </swiper-container>
+  
+  </div>
+
+  <div class="fondo-gray">
+    <div class="py-5">
+      <h1 class="text-center titulo  ">
+        Beneficios de ser un Afiliado CMIC CDMX
+      </h1>
+      <div class="d-flex">
+        <hr class="mx-auto">
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mx-auto my-3">
+          <div class="d-flex my-3">
+            <img src="../../../../../assets/checkmark02.png" style="width: 60px; height: 60px;" class="me-3" alt="">
+            <h4 class="my-3"><strong>   Corporativo de Seguros y Fianzas
+            </strong></h4>
+          </div>
+          <p class="ps-5">
+            Aprovecha las alianzas comerciales que la CMIC genera en beneficio a sus afiliados; asegura tus activos y capital humano. Conoce los seguros médicos, de automóviles y flotillas, maquinaria pesada y de responsabilidad civil.
+          </p>
+        </div>
+        <div class="col-md-4 mx-auto my-3">
+          <div class="d-flex my-3">
+            <img src="../../../../../assets/checkmark02.png" style="width: 60px; height: 60px" class="me-3" alt="">
+            <h4 class="my-3"><strong>  Representación y Gestión
+            </strong></h4>
+          </div>
+          <p class="ps-5">
+            Aprovecha las alianzas comerciales que la CMIC genera en beneficio a sus afiliados; asegura tus activos y capital humano. Conoce los seguros médicos, de automóviles y flotillas, maquinaria pesada y de responsabilidad civil.
+          </p>
+        </div>
+      </div>
+      <div class="row mb-0">
+        <div class="col-md-4  mx-auto my-3">
+          <div class="d-flex my-3">
+            <img src="../../../../../assets/checkmark02.png" style="width: 60px;height: 60px" class="me-3" alt="">
+            <h4 class="my-3"><strong> Reuniones, conferencias y foros
+            </strong></h4>
+          </div>
+          <p class="ps-5">
+            Participación en eventos de carácter regional y nacional que la CMIC realiza con funcionarios de gobierno. Generación de Networking e introducción a nuevas tecnologías enfocadas al sector de la construcción.
+          </p>
+        </div>
+        <div class="col-md-4 mx-auto my-3">
+          <div class="d-flex my-3">
+            <img src="../../../../../assets/checkmark02.png" style="width: 60px; height: 60px" class="me-3" alt="">
+            <h4 class="my-3"><strong>  Financiamiento
+            </strong></h4>
+          </div>
+          <p class="ps-5">
+            Acceso a diversos esquemas de financiamiento, capital para compra de maquinaria y capital de trabajo, compra de bienes muebles, entre otros.
+          </p>
+        </div>
+       
+        
+      </div>
+      <div class="row pb-5">
+        <div class=" col-md-4  mx-auto my-3">
+          <div class="d-flex my-3">
+            <img src="../../../../../assets/checkmark02.png" style="width: 60px;height: 60px" class="me-3" alt="">
+            <h4 class="my-3"><strong>  Asesoría Legal en materia
+            </strong></h4>
+          </div>
+          <p class="ps-5">
+            – Fiscal y Patrimonial <br>
+            – Pública Financiera<br>
+            – Trámites administrativos y tributarios<br>
+            – Capacitación y Seguridad Social<br>
+            – Normatividad interna de CMIC y sus Instituciones<br>
+            – Derecho Laboral<br>
+            – Derecho Energético<br>
+          </p>
+        </div>
+    
+  
+        
+      </div>
+    </div>
+
+  </div>
+
+  <swiper-container 
+    class="d-flex"
+    [autoplay]="{delay: 2000, pauseOnMouseEnter:true}"
+    [pagination]="paginationConfig"
+    [slidesPerView]="3"
+    [breakpoints]="breakpoints2"
+    [loop]="true"
+  >
+  <swiper-slide>
+    <div class=" ms-auto tarjeta px-0 my-3"
+    (click)="go('https://www.cmic.org.mx/cmic/Afiliacion/servicios/PBA%202024%20V1.pdf')"
+    style="
+    background-image: url('../../../../../assets/48.jpg');
+    background-size: cover;
+    background-position: center;
+    "
+    >
+    <div class="frojoq w-100 h-100 d-flex">
+      <h1 class="m-auto text-center carta">
+        Portafolio de Beneficios
+      </h1>
+    </div>
+  </div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" mx- tarjeta px-0 my-3"
+    (click)="go('https://www.cmic.org.mx/cmic/descuentos/')"
+    style="
+    background-image: url('../../../../../assets/22.jpg');
+    background-size: cover;
+    background-position: center;
+    "
+    >
+    <div class="fnegro w-100 h-100 d-flex">
+      <h1 class="m-auto text-center carta">
+       Descuentos Comerciales
+      </h1>
+    </div>
+  </div>
+  
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" mx- tarjeta px-0 my-3"
+style="
+background-image: url('../../../../../assets/hDOwrrtN.png');
+background-size: cover;
+background-position: center;
+"
+(click)="go('https://www.cmic.org.mx/construcompra/?fbclid=IwAR1CJHIx3Zw1AYnBD9Og1vm_LdFynAGL85BsyWiv8WQ55QyQBBzLSvVrLLE')"
+>
+<div class="frojoq w-100 h-100 d-flex">
+<h1 class="m-auto text-center carta">
+  ConstruCompra
+</h1>
+</div>
+</div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" mx- tarjeta px-0 my-3"
+style="
+background-image: url('../../../../../assets/30.jpg');
+background-size: cover;
+background-position: center;
+"
+(click)="go('https://www.cmic.org.mx/catalogo/')"
+>
+<div class="fnegro w-100 h-100 d-flex">
+<h1 class="m-auto text-center carta">
+ Directorio de Proveedores
+</h1>
+</div>
+</div>
+  </swiper-slide>
+  <swiper-slide>
+    
+<div class=" me-auto tarjeta px-0 my-3"
+style="
+background-image: url('../../../../../assets/images.png');
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+"(click)="go('https://www.cmic.org.mx/cmic/siem/')"
+>
+<div class="frojoq w-100 h-100 d-flex">
+<h1 class="m-auto text-center carta">
+ SIEM
+</h1>
+</div>
+</div>
+
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" ms-auto tarjeta px-0 my-3"
+    (click)="go('https://issuu.com/revista_cmic/docs/portafolio_de_beneficios_de_alto_impacto_para_empr')"
+    style="
+    background-image: url('../../../../../assets/48.jpg');
+    background-size: cover;
+    background-position: center;
+    "
+    >
+    <div class="fnegro w-100 h-100 d-flex">
+      <h1 class="m-auto text-center carta">
+        Portafolio de Beneficios
+      </h1>
+    </div>
+  </div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" mx- tarjeta px-0 my-3"
+    (click)="go('https://www.cmic.org.mx/cmic/descuentos/')"
+    style="
+    background-image: url('../../../../../assets/22.jpg');
+    background-size: cover;
+    background-position: center;
+    "
+    >
+    <div class="frojoq w-100 h-100 d-flex">
+      <h1 class="m-auto text-center carta">
+       Descuentos Comerciales
+      </h1>
+    </div>
+  </div>
+  
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" mx- tarjeta px-0 my-3"
+style="
+background-image: url('../../../../../assets/hDOwrrtN.png');
+background-size: cover;
+background-position: center;
+"
+(click)="go('https://www.cmic.org.mx/construcompra/?fbclid=IwAR1CJHIx3Zw1AYnBD9Og1vm_LdFynAGL85BsyWiv8WQ55QyQBBzLSvVrLLE')"
+>
+<div class="fnegro w-100 h-100 d-flex">
+<h1 class="m-auto text-center carta">
+  ConstruCompra
+</h1>
+</div>
+</div>
+  </swiper-slide>
+  <swiper-slide>
+    <div class=" mx- tarjeta px-0 my-3"
+style="
+background-image: url('../../../../../assets/30.jpg');
+background-size: cover;
+background-position: center;
+"
+(click)="go('https://www.cmic.org.mx/catalogo/')"
+>
+<div class="frojoq w-100 h-100 d-flex">
+<h1 class="m-auto text-center carta">
+ Directorio de Proveedores
+</h1>
+</div>
+</div>
+  </swiper-slide>
+  <swiper-slide>
+    
+<div class=" me-auto tarjeta px-0 my-3"
+style="
+background-image: url('../../../../../assets/images.png');
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+"(click)="go('https://www.cmic.org.mx/cmic/siem/')"
+>
+<div class="fnegro w-100 h-100 d-flex">
+<h1 class="m-auto text-center carta">
+ SIEM
+</h1>
+</div>
+</div>
+
+  </swiper-slide>
+
+  </swiper-container>
+   
+
+
+
+
+
+
+  <div class="d-flex py-5 w-100">
+    <ion-card class="shadow mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0">
+               <img src="../../../../../assets/23.jpg" class="img p-0" alt="">
+        </div>
+        <div class="col-md-6 d-flex">
+       <div class="m-auto container">
+        <ion-text class="ion.margin-vertical" color="primary">
+          <h5>CMIC Ciudad de México</h5>
+        </ion-text>
+        <h1  class="mb-2 titulo text-black"> Afíliate ahora a la CMIC y <br> disfruta todos los beneficios</h1>
+        <hr class="mb-5 ">
+
+        <ion-button routerLink="/website/afiliate" class="mb-3"  shape="round">
+          Afíliate
+        </ion-button>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </div>
+
+  <div class="my-5 container" >
+    <div class="py-5">
+      <h1 class="text-center titulo  ">
+        Información privilegiada del sector
+      </h1>
+      <div class="d-flex">
+        <hr class="mx-auto">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto d-flex">
+        <ion-card class="mx-auto">
+          <div class="row">
+            <div class="col-5 d-flex">
+              <img class="m-auto" src="../../../../../assets/LogoCeico150x150.png" alt="">
+            </div>
+            
+            <div class="col-7 py-3">
+              <h1 class="text-start titulo  ">
+                CEICO
+              </h1>
+       
+                <hr class="my-2">
+  
+              <p class="pe-3">Información actualizada respecto a ingeniería de costos, tabuladores, catálogos, entre otros.</p>
+              <ion-button class="my-3" color="primary" shape="round">
+                Ver más
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+      <div class="col-md-6 mx-auto d-flex">
+        <ion-card class="mx-auto">
+          <div class="row">
+            <div class="col-5 d-flex">
+              <img class="m-auto" src="../../../../../assets/btn-ceesco.png" style="max-height: 200px;" alt="">
+            </div>
+            
+            <div class="col-7 py-3">
+              <h1 class="text-start titulo  ">
+                CEESCO
+              </h1>
+       
+                <hr class="my-2">
+  
+              <p class="pe-3">Información estádistica, económica y relativa a las principales inversiones dentor del rubro de la contrucción, segmentada por sectores y regiones</p>
+              <ion-button class="my-3" color="primary" shape="round">
+                Ver más
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+      <div class="col-md-6 mx-auto d-flex">
+        <ion-card class="mx-auto">
+          <div class="row">
+            <div class="col-md-5 my-3 d-flex">
+              <img class="m-auto" src="../../../../../assets/hDOwrrtN.png" style="max-height: 200px;" alt="">
+            </div>
+            
+            <div class="col-md-7 my-3 py-3 px-3 px-mx-5">
+              <h1 class="text-start titulo  ">
+                ConstruCompra
+              </h1>
+       
+                <hr class="my-2">
+  
+              <p class="pe-3">
+                Plataforma digital de la CMIC, que ofrece descuentos y precios preferenciales para la compra de productos y/o servicios con los principales proveedores de la construcción, tales como: materiales de construcción, software, equipos tecnológicos, maquinaria, entre otros
+              </p>
+              <ion-button class="my-3" color="primary" shape="round">
+                Ver más
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+      <div class="col-md-6 mx-auto d-flex">
+        <ion-card class="mx-auto">
+          <div class="row">
+            <div class="col-md-5 my-3 d-flex">
+              <img class="m-auto" src="../../../../../assets/logo-itc-3.png" style="max-height: 200px;" alt="">
+            </div>
+            
+            <div class="col-md-7 my-3 py-3 px-3 px-mx-5">
+              <h1 class="text-start titulo  ">
+                ITC
+              </h1>
+       
+                <hr class="my-2">
+  
+              <p class="pe-3">
+                El ITC nace como respuesta de la Cámara Mexicana de la Industria de la Construcción para vincular la escuela con la industria de la construcción, apoyados en los ejecutivos y dueños de empresas constructoras del país.
+              </p>
+              <ion-button class="my-3" color="primary" shape="round">
+                Ver más
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+      <div class="col-md-6 mx-auto d-flex">
+        <ion-card class="mx-auto">
+          <div class="row">
+            <div class="col-md-5 my-3 d-flex">
+              <img class="m-auto" src="../../../../../assets/ici.png" style="max-height: 200px;" alt="">
+            </div>
+            
+            <div class="col-md-7 my-3 py-3 px-3 px-mx-5">
+              <h1 class="text-start titulo  ">
+                ICIC
+              </h1>
+       
+                <hr class="my-2">
+  
+              <p class="pe-3">
+                La Cámara Mexicana de la Industria de la Construcción constituyó el 19 de abril de 1978 al Instituto de Capacitación de la Industria de la Construcción (ICIC) en demanda de las necesidades de nuestro país que cada día requiere de más trabajadores calificados, más profesionistas especializados y mas directivos comprometidos.
+              </p>
+              <ion-button class="my-3" color="primary" shape="round">
+                Ver más
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+      <div class="col-md-6 mx-auto d-flex">
+        <ion-card class="mx-auto">
+          <div class="row">
+            <div class="col-md-5 my-3 d-flex">
+              <img class="m-auto" src="../../../../../assets/logo-fic2.png" style="max-height: 200px;" alt="">
+            </div>
+            
+            <div class="col-md-7 my-3 py-3 px-3 px-mx-5">
+              <h1 class="text-start titulo  ">
+                FIC
+              </h1>
+       
+                <hr class="my-2">
+  
+              <p class="pe-3">
+               Desde 1994 la Fundación de la Industria de la Construcción (FIC), funciona como eje motriz para el desarrollo tecnológico mediante las mega tendencias en construcción y es el pilar de la investigación aplicada para el sector industrial; otorga asesorías mediante bancos de información, cursos, seminarios, talleres y congresos con ponentes nacionales e internacionales.
+              </p>
+              <ion-button class="my-3" color="primary" shape="round">
+                Ver más
+              </ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+
+<div class="fondo-gray py-5">
+  <h1 class="text-center titulo  ">
+   ¡Forma parte de nuestras COMISIONES MIXTAS y GRUPOS DE TRABAJO!
+  </h1>
+  <div class="d-flex">
+    <hr class="mx-auto">
+  </div>
+
+  <swiper-container 
+  class="d-flex"
+  [autoplay]="{delay: 1000, pauseOnMouseEnter:true}"
+  [pagination]="paginationConfig"
+  [slidesPerView]="3"
+  [breakpoints]="breakpoints"
+  [loop]="true"
+
+>  <swiper-slide (click)="go(item?.url)"  *ngFor="let item of comisiones; let i = index">  
+  <div class=" mx- tarjeta px-0 my-3"
+  style="
+   background-image: url({{url+item.imagen}});
+  background-size: cover;
+  background-position: center;
+  "
+  >
+  <div [ngClass]="{'fnegro': i%2 === 0, 'frojoq':i%2 !== 0}" class=" w-100 h-100 d-flex">
+    <h1 class="m-auto text-center carta">
+      {{item.texto}}
+    </h1>
+  </div>
+</div>
+
+</swiper-slide>
+
+
+ 
+  </swiper-container>
+
+</div>
+
+
+
+<div class="info">
+  <div class="py-5">
+    <h1 class="text-center titulo text-black">Información de Contacto</h1>
+    <hr class="mx-auto hrr">
+  </div>
+  <div class="row h-100 mb-5">
+    <div class=" col-xl-3 my-auto col-lg-6 mx-auto d-flex mini">
+      <ion-card mode="ios" class="ion-padding a mx-auto" style="border:1px solid black">
+          <ion-text color="primary">
+            <h1 class="titulo text-center zz">Afiliación / SIEM</h1>
+          </ion-text>
+          <div class="d-flex">
+            <hr class="hr mx-auto">
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">afiliacion@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">coord.afiliacion@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 6472 0073</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5424 7438  Ext. 2007 / 7064 </h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0"> 55 5424 7400 Ext. 2007 / 7064 </h6>
+            </ion-text>
+          </div>
+      </ion-card>
+    </div>
+    <div class="col-xl-3 col-lg-6 my-auto mx-auto d-flex mini">
+      <ion-card mode="ios" class="ion-padding a mx-auto" style="border:1px solid black">
+          <ion-text color="primary">
+            <h1 class="titulo text-center zz">ITC</h1>
+          </ion-text>
+          <div class="d-flex">
+            <hr class="hr mx-auto">
+          </div>
+          <ion-text color="dark" class="me-auto my-auto">
+            <h6 class="f mb-0">Licenciaturas, maestrías, diplomados y especialidades:</h6>
+          </ion-text>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">direccion.cdmx@itc-ac.edu.mx</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">info@itc-ac.edu.mx</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">promocionitccdmx@itc-ac.edu.mx</h6>
+            </ion-text>
+          </div>
+          <br>
+          <ion-text color="dark" class="me-auto my-auto">
+            <h6 class="f mb-0">Oficina Académica:</h6>
+          </ion-text>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">gabriela@itc-ac.edu.mx</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 6472 0073</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5668 0787  Ext. 5 / 2019 / 2020 </h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5668 2851 Ext. 5 / 2019 / 2020 </h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5668 0748 Ext. 5 / 2019 / 2020 </h6>
+            </ion-text>
+          </div>
+      </ion-card>
+    </div>
+
+    <div class="col-lg-6 col-xl-3 my-auto mx-auto d-flex mini">
+      <ion-card mode="ios" class="ion-padding  mx-auto a" style="border:1px solid black">
+          <ion-text color="primary">
+            <h1 class="titulo text-center zz">ICIC</h1>
+          </ion-text>
+          <div class="d-flex">
+            <hr class="hr mx-auto">
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">asistente.icic@icic-oc.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">lizbeth.casanova@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">yoselin.pina@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 2748 6784</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 5424 7400 Ext. 2020 / 2019 / 2017 </h6>
+            </ion-text>
+          </div>
+      </ion-card>
+    </div>
+
+    <div class="col-lg-6  col-xl-3 my-auto mx-auto d-flex mini">
+      <ion-card mode="ios" class="ion-padding a mx-auto" style="border:1px solid black">
+          <ion-text color="primary">
+            <h1 class="titulo text-center zz">FIC</h1>
+          </ion-text>
+          <div class="d-flex">
+            <hr class="hr mx-auto">
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">seminarios.fic@fic.org.mx</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">asistente.icic@cmiccdmx.org</h6>
+            </ion-text>
+          </div>
+
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 2712 0779</h6>
+            </ion-text>
+          </div>
+          <div class="text-start d-flex ion-margin-vertical">
+            <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">55 6271 4910</h6>
+            </ion-text>
+          </div>
+      </ion-card>
+    </div>
+  </div>
+
+
+</div>
+
+  <div class="container">
+    <h1 class="text-center  text-black py-1 mt-2"><strong>¡Estamos Cerca de Tí!</strong></h1>
+   <div class="d-flex">
+    <hr class="mx-auto hrr mb-2">
+   </div>
+   
+  </div>
+<div class="d-flex">
+
+  <iframe class="p-4 mx-auto w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.427667068786!2d-99.19143228730557!3d19.302433712471636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0077909affb7%3A0x70764f79b6293b6f!2sC%C3%A1mara%20Mexicana%20de%20la%20Industria%20de%20la%20Construcci%C3%B3n!5e0!3m2!1ses!2smx!4v1702310237991!5m2!1ses!2smx"  height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div class="solicitar " id="afiliate">
+  <div class=" w-100 h-100 d-flex flex-column "  >
+    <div class="container  m-auto ">
+      <div class="col-10 offset-md-1 col-md-6 col-lg-6 my-auto mx-auto ms-auto  mx-md-0 mb-5">
+        <ion-card class="d-flex flex-column ion-padding shadow">
+          <h1 class="text-center  text-black py-1 mt-2"><strong>Solicita Más Información Para Afiliarte</strong></h1>
+          <hr class="mx-auto hrr mb-2">
+          <ion-input class="ion-margin-vertical" label="Nombre completo" color="primary" label-placement="stacked"
+            fill="outline" placeholder="" [(ngModel)]="form.name" ></ion-input>
+          <ion-input class="ion-margin-vertical" label="Correo" color="primary" label-placement="stacked" fill="outline"
+            placeholder="" [(ngModel)]="form.correo"></ion-input>
+          <ion-input class="ion-margin-vertical" label="Teléfono" color="primary" label-placement="stacked" fill="outline"
+            placeholder="" [(ngModel)]="form.tel"></ion-input>
+          <ion-textarea class="ion-margin-vertical" label="Mensaje" color="primary" label-placement="stacked"
+            fill="outline" [(ngModel)]="form.mensaje" placeholder="" rows="10"></ion-textarea>
+            <ion-button (click)="send()" [disabled]="!form.correo.includes('@')" class="mx-auto ion-margin-vertical" shape="round">
+              Enviar
+            </ion-button>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <web-footer></web-footer>
+</ion-content>

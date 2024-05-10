@@ -1,0 +1,65 @@
+.fondo{
+    background-color: var(--ion-color-secondary);
+}
+ion-text{
+    cursor: pointer;
+}
+.b{
+  width: 36px;
+  height: 36px;
+  --border-radius: 30px;
+}
+
+  hr {
+    border-color: var(--ion-color-primary);
+    background-color: var(--ion-color-primary);
+    border-width: 2px;
+    width: 70px;
+    opacity: 1;
+    margin-right:auto; /* Centra horizontalmente el <hr> */
+    margin-top: 0px;
+  }
+
+  .hrr {
+    border-color: var(--ion-color-primary);
+    background-color: var(--ion-color-primary);
+    border-width: 2px;
+    width: 80%;
+    opacity: 1;
+    margin-right:auto; /* Centra horizontalmente el <hr> */
+  }
+
+
+  @media (max-width:768px) {
+    .d-flex{
+      flex-direction: column!important;
+    }
+  }
+
+  
+ion-button, ion-text, div{
+  font-family: 'cmic';
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.desactive:hover {
+  transition: 500ms;
+  color: var(--ion-color-primary); /* Color del texto cuando el enlace está activo */
+  font-weight: bold; /* Estilo del texto cuando el enlace está activo */
+  text-decoration: underline var(--ion-color-primary); /* Subrayado rojo */
+  text-underline-offset: 6px; 
+}
+.active {
+  transition: 500ms;
+  color: var(--ion-color-primary); /* Color del texto cuando el enlace está activo */
+  font-weight: bold; /* Estilo del texto cuando el enlace está activo */
+  text-decoration: underline var(--ion-color-primary); /* Subrayado rojo */
+  text-underline-offset: 6px; 
+}
+.desactive {
+  transition: 500ms;
+  cursor: pointer;
+}

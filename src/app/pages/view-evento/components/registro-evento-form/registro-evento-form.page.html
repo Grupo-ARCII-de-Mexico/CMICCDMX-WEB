@@ -1,0 +1,26 @@
+
+<div *ngIf="evento">
+  <ion-card-title class="text-center"><b style="font-size: 20px;">Seleccione su registro</b></ion-card-title>
+  <ion-segment [(ngModel)]="tipo"  >
+    <ion-segment-button [value]="tipoPublico.AFILIADOS" *ngIf="evento.publicos.includes('0')" >
+      <ion-label>Afiliado</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="tipoPublico.PUBLICO_GENERAL" *ngIf="evento.publicos.includes('1')">
+      <ion-label>Público General</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="tipoPublico.ESTUDIANTES" *ngIf="evento.publicos.includes('2')">
+      <ion-label>Estudiantes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="tipoPublico.PRENSA" *ngIf="evento.hayPrensa">
+      <ion-label>Prensa</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <afiliado-form [disabled]="disabled"  *ngIf="tipo === tipoPublico.AFILIADOS" (usuarioGuardado)="save($event)" [delegaciones]="delegaciones"  [estados]="estados"  [extranjero]="extranjero" ></afiliado-form>
+  <estudiante-form [disabled]="disabled"  (upload)="upload()" *ngIf="tipo === tipoPublico.ESTUDIANTES" (usuarioGuardado)="save($event)" [delegaciones]="delegaciones"  [estados]="estados"  [extranjero]="extranjero" ></estudiante-form>
+  <general-form [disabled]="disabled"  *ngIf="tipo === tipoPublico.PUBLICO_GENERAL" (usuarioGuardado)="save($event)" [delegaciones]="delegaciones"  [estados]="estados"  [extranjero]="extranjero" ></general-form>
+
+  <prensa-form  [disabled]="disabled" *ngIf="tipo === tipoPublico.PRENSA"(usuarioGuardado)="save($event)"></prensa-form>
+
+ 
+</div>

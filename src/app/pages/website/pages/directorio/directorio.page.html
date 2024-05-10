@@ -1,0 +1,140 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="headerStatusService.setBooleanStatus($event)">
+  <div class="fondo d-flex ">
+    <div class="frojo w-100 d-flex flex-column">
+      <h1 class="titulo text-center mt-auto mx-auto text-white">Directorio </h1>
+      <p class="mt-auto ms-auto text-white me-4 mb-4"> Inicio / CMIC / Directorio</p>
+
+    </div>
+  
+  </div>
+
+  <div class="d-flex pt-5 w-100 px-5 px-md-0">
+    <ion-card class="shadow mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0" >
+           <img src="../../../../../assets/56.jpg" style="max-height: 400px;" class="h-100 p-0" alt="">
+        </div>
+        <div class="col-md-6 d-flex ">
+       <div class="mb-auto mt-5 container">
+        <ion-text class="ion-margin-vertical" color="dark">
+          <h3 >Para cualquier duda o aclaración favor de <br>
+          contactar a nuestra área técnica con : </h3>
+        </ion-text>
+        <h1  class="mb-2  text-black mt-3"> <strong>Gerente Técnico</strong></h1>
+        <hr class="mb-5 hrr">
+  
+        <ion-button color="dark" fill="clear" class="my-1 ion-text-lowercase">
+          <ion-icon slot="start" name="mail" color="primary"></ion-icon>
+           <strong> gerente.tecnico@cmiccdmx.org</strong>
+        </ion-button>
+        <br>
+        <ion-button color="dark" fill="clear" class="my-1">
+          <ion-icon slot="start" name="call" color="primary"></ion-icon>
+          <strong>   55 5424 7400 Ext. 7502</strong>
+        </ion-button>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </ion-card>
+  
+  </div>
+
+<div class="container my-5">
+  <div class="d-flex">
+    <ion-searchbar class="ms-auto col-10 col-md-4" [(ngModel)]="search" placeholder="Buscar Contacto"  [debounce]="250" ></ion-searchbar>
+  </div>
+
+  <ion-accordion-group [value]="depas[0].id" #accordionGroup *ngIf="search.length=== 0  && selected.length>0">
+    <ion-accordion   *ngFor="let depa of depas;let i = index" [value]="depa.id"  class="ion-margin-vertical">
+      <ion-item slot="header" [color]="selected[i] ? 'primary' : 'secondary'" (click)="seleccion(i)" >
+        <ion-label>{{depa.nombre}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <div *ngFor="let item of depa.directorios">
+          <ion-item >
+            <ion-label><ion-text color="primary">
+              <p><strong>{{item.nombre}}</strong></p>
+            </ion-text>
+            <p><strong>{{item.cargo}}</strong> </p>
+              <div class="d-flex">
+                <ion-icon color="primary" class="me-1 mt-1 p-0" name="mail"></ion-icon>
+                <ion-label color="primary">{{item.correo}}</ion-label>
+              </div>
+            </ion-label>
+          </ion-item>
+        </div>
+      
+      </div>
+    </ion-accordion>
+
+  </ion-accordion-group>
+
+  <div *ngIf="search.length > 0" >
+    <div   *ngFor="let depa of depas"  class="ion-margin-vertical">
+      <div *ngFor="let item of depa.directorios | directorioSearch:search">
+        <ion-item >
+          <ion-label><ion-text color="primary">
+            <p><strong>{{item.nombre}}</strong></p>
+          </ion-text>
+          <p><strong>{{item.cargo}}</strong> </p>
+            <div class="d-flex">
+              <ion-icon color="primary" class="me-1 mt-1 p-0" name="mail"></ion-icon>
+              <ion-label color="primary">{{item.correo}}</ion-label>
+            </div>
+          </ion-label>
+        </ion-item>
+      </div>
+    
+    </div>
+
+
+  </div>
+  
+</div>
+
+
+<div class="d-flex py-5 w-100">
+  <div class=" mx-auto py-0 w-100">
+    <ion-card-content class="p-0 m-0 h-1 af">
+     <div class="row">
+      <div class="col-md-6 d-flex my-3 my-md-0 h-1 px-0">
+        <img src="../../../../../assets/48.jpg" class="img p-0" alt="">
+      </div>
+      <div class="col-md-6 d-flex bg-gray bgi">
+     <div class="m-auto container">
+      <ion-text class="ion-margin-vertical" color="primary">
+        <h5 ><strong>CMIC Ciudad de México</strong></h5>
+      </ion-text>
+      <h1  class="mb-2 titulo text-black"> Afíliate ahora a la CMIC y <br> disfruta todos los beneficios</h1>
+      <hr class="mb-5 ">
+
+      <ion-button routerLink="/website/afiliate"  class="mb-3" shape="round">
+        Afíliate
+      </ion-button>
+    </div>
+      </div>
+     </div>
+    </ion-card-content>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-icic2.png" alt="">
+    </div>
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-itc-3.png" alt="">
+    </div>
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-fic2.png" alt="">
+    </div>
+  </div>
+</div>
+<web-footer></web-footer>
+</ion-content>
+

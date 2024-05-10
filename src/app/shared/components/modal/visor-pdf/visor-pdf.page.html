@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-button color="light" slot="start" (click)="modalc.dismiss()" expand="block" fill="clear" shape="round">
+      <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+    </ion-button>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="visible"  >
+
+</ion-content>

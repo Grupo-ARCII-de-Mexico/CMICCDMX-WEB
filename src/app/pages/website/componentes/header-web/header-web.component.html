@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar *ngIf="headerStatusService.booleanObservable$ | async" id="subheader" class="d-none d-md-block d-flex"   color="secondary" style="height: 50px;">
+    <div class="d-flex ms-5 ">
+      <div (click)="openUrl('tel:+525554247463')"class="ms-1 ms-lg-3 ms-xl-5  mt-aa me-3 d-flex">
+        <ion-icon class="me-2 mt-1" name="call" color="light"></ion-icon>
+        <ion-label class="">55 5424 7463</ion-label>
+  
+      </div>
+   
+      <div class="mt-aa me-auto d-none d-lg-block " (click)="openUrl('https://maps.app.goo.gl/P4t1iEo3BDFGTB4m7')" >
+         <div class="d-flex">
+          <ion-icon class=" my-auto me-2" name="location" color="light"></ion-icon>
+          <ion-label class="my-auto h6"> <h6>Periférico Sur No. 4839 PB, CP 14010, Parques del Pedregal, Tlalpan CDMX</h6></ion-label>
+     
+         </div>
+      </div>
+      <div class="ms-auto">
+   
+     
+          <ion-button fill="clear" (click)="openUrl('https://www.instagram.com/cmic.cdmx')" class="mx-3 b  ion-no-padding" color="light"  shape="round">
+            <ion-icon class="b p-0 m-0" slot="icon-only" name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear"(click)="openUrl('https://www.facebook.com/CMICCDMX/')" class="mx-3 b  ion-no-padding" color="light"  shape="round">
+            <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear"(click)="openUrl('https://www.youtube.com/channel/UCNT08GAl28pxLXH7heNz5qg')"class="mx-3 b  ion-no-padding" color="light"  shape="round">
+            <ion-icon slot="icon-only" name="logo-youtube"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" (click)="openUrl('https://twitter.com/cmic_cdmx')"class="mx-3 b  ion-no-padding" color="light"  shape="round">
+            <img src="../../../../../assets/X_logo_2023_(white).png" style="width: 25px; height: 25px;" alt="">
+          </ion-button>
+          <ion-button fill="clear" (click)="openUrl('http://linkedin.com/company/cmiccdmx')" class="mx-3 b  ion-no-padding" color="light"  shape="round">
+            <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
+          </ion-button>
+          <ion-button (click)="openUrl('https://www.tiktok.com/@cmic_cdmx')" class="mx-1 b  ion-no-padding" fill="clear"  color="light"  shape="round">
+            <ion-icon slot="icon-only" style="font-size: 30px;"  name="logo-tiktok"></ion-icon>
+          </ion-button>
+      </div>
+
+      <ion-button *ngIf="!sessionActive" routerLink="/login" class="mx-4 pb-5 d-none d-xl-block" expand="block" color="light"  shape="round">
+        Iniciar Sesión
+      </ion-button>
+      <ion-button routerLink="/dashboard" class="mx-4 pb-5 d-none d-xl-block" expand="block" color="light" fill="clear" *ngIf="sessionActive"  shape="round">
+        Dashboard <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  
+
+
+  </ion-toolbar>
+  <nav class="d-flex">
+    <ion-img src="../../../../../assets/cmic.png" style="width: 220px;" class="my-3  ms-2 ms-md-5 desactive me-auto " routerLink="/website"></ion-img>
+    <div class="d-none d-lg-block mt-auto mb-4">
+      <div class="d-flex">
+        <ion-text class="mt-3 mx-3 ms-auto" slot="end" routerLink="/website/oportunidad-negocio">
+          <h6 class="desactive"  routerLinkActive="active">Oportunidad de Negocio</h6>
+        </ion-text>
+        <ion-text class="mt-3 mx-3 dropbtn" slot="end"  >
+          <h6 class="desactive" routerLink="/website/eventos" routerLinkActive="active">Eventos</h6>
+        </ion-text>
+        
+      
+        <ion-text class="mt-3 mt-md-4 mt-lg-3 mx-3" slot="end" >
+          <h6 class="desactive"  routerLink="/website/licitaciones" routerLinkActive="active">Licitaciones</h6>
+        </ion-text>
+        <ion-text class="mt-3 mt-md-4 mt-lg-3 mx-3" slot="end" >
+          <h6 class="desactive"  routerLink="/website/bolsa-trabajo" routerLinkActive="active">Bolsa de Trabajo</h6>
+        </ion-text>
+        <div class="dropdown">
+          <ion-text  id="popover-button" class="mt-3 mx-3 mt-md-4 mt-lg-3 d-none d-xl-block" slot="end">
+            <h6 class="desactive" routerLink="/website/instituciones" routerLinkActive="active">Instituciones</h6>
+          </ion-text>
+          <div class="dropdown-content ">
+            <ion-list (mouseleave)="closePopover()">
+              <ion-item button routerLink="/website/instituciones/icic" routerLinkActive="active">
+                <h6 class="desactive">Capacitación Ejecutiva (ICIC)</h6>
+              </ion-item>
+              <ion-item button routerLink="/website/instituciones/itc" routerLinkActive="active">
+                <h6 class="desactive">Oferta Educativa (ITC)</h6>
+              </ion-item>
+              <ion-item button routerLink="/website/instituciones/fic" routerLinkActive="active">
+                <h6 class="desactive">Instituto Certificador (FIC)</h6>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+   
+        <ion-text class="mt-3 mt-md-4 mt-lg-3 mx-3" slot="end" routerLink="/website/foros" >
+          <h6 class="desactive" routerLinkActive="active">Foros</h6>
+        </ion-text>
+        <div class="dropdown">
+          <ion-text  id="popover-button" class="mt-3 mt-md-4 mt-lg-3 mx-3 d-none d-lg-block"  slot="end">
+            <h6 class="desactive" routerLink="/website/cmic" routerLinkActive="active">CMIC</h6>
+          </ion-text>
+          <div class="dropdown-content ">
+            <ion-list (mouseleave)="closePopover()">
+              <ion-item button routerLink="/website/cmic/directorio" routerLinkActive="active">
+                <h6 class="desactive">Directorio</h6>
+              </ion-item>
+              <ion-item button routerLink="/website/cmic/contacto" routerLinkActive="active">
+                <h6 class="desactive">Contáctanos</h6>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+        <ion-button routerLink="/website/afiliate"  slot="end" class="me-5" shape="round">
+          Afíliate
+        </ion-button>
+      </div>
+    </div>
+    <div class="d-block d-lg-none my-auto" slot="end">
+  <ion-button  fill="clear" color="secondary" (click)="open()">
+    <ion-icon slot="icon-only" name="menu"></ion-icon>
+  </ion-button>
+    </div>
+  </nav>
+</ion-header>
+

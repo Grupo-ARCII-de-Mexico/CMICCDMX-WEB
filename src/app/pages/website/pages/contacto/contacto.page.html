@@ -1,0 +1,261 @@
+<web-header></web-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="mapa d-flex">
+
+    <div class="col-10 offset-md-1 col-md-6 col-lg-4 my-auto mx-auto ms-auto ms-md-5 mx-md-0 mb-5">
+      <ion-card class="d-flex flex-column ion-padding shadow">
+        <h1 class="text-center titu text-black">Contáctanos</h1>
+        <hr class="mx-auto hrr">
+        <ion-input class="ion-margin-vertical" label="Nombre completo" color="primary" label-placement="stacked"
+          fill="outline" placeholder="" [(ngModel)]="form.name"></ion-input>
+        <ion-input class="ion-margin-vertical" label="Correo" color="primary" label-placement="stacked" fill="outline"
+          placeholder="" [(ngModel)]="form.correo"></ion-input>
+        <ion-input class="ion-margin-vertical" label="Teléfono" color="primary" label-placement="stacked" fill="outline"
+          placeholder="" [(ngModel)]="form.tel"></ion-input>
+        <ion-textarea class="ion-margin-vertical" [(ngModel)]="form.mensaje" label="Mensaje" color="primary" label-placement="stacked"
+          fill="outline" placeholder="" rows="10"></ion-textarea>
+          <ion-button (click)="send()" [disabled]="!form.correo.includes('@')"  class="mx-auto ion-margin-vertical" shape="round">
+            Enviar
+          </ion-button>
+      </ion-card>
+    </div>
+
+  </div>
+
+  <div class="info">
+    <div class="py-5">
+      <h1 class="text-center titulo text-black">Información de Contacto</h1>
+      <hr class="mx-auto hrr">
+    </div>
+    <div class="row h-100 mb-5">
+      <div class=" col-xl-3 my-auto col-lg-6 mx-auto d-flex mini">
+        <ion-card mode="ios" class="ion-padding a mx-auto" style="border:1px solid black">
+            <ion-text color="primary">
+              <h1 class="titulo text-center zz">Afiliación / SIEM</h1>
+            </ion-text>
+            <div class="d-flex">
+              <hr class="hr mx-auto">
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">afiliacion@cmiccdmx.org</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">coord.afiliacion@cmiccdmx.org</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 6472 0073</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 5424 7438  Ext. 2007 / 7064 </h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0"> 55 5424 7400 Ext. 2007 / 7064 </h6>
+              </ion-text>
+            </div>
+        </ion-card>
+      </div>
+      <div class="col-xl-3 col-lg-6 my-auto mx-auto d-flex mini">
+        <ion-card mode="ios" class="ion-padding a mx-auto" style="border:1px solid black">
+            <ion-text color="primary">
+              <h1 class="titulo text-center zz">ITC</h1>
+            </ion-text>
+            <div class="d-flex">
+              <hr class="hr mx-auto">
+            </div>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">Licenciaturas, maestrías, diplomados y especialidades:</h6>
+            </ion-text>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">direccion.cdmx@itc-ac.edu.mx</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">info@itc-ac.edu.mx</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">promocionitccdmx@itc-ac.edu.mx</h6>
+              </ion-text>
+            </div>
+            <br>
+            <ion-text color="dark" class="me-auto my-auto">
+              <h6 class="f mb-0">Oficina Académica:</h6>
+            </ion-text>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">gabriela@itc-ac.edu.mx</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 6472 0073</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 5668 0787  Ext. 5 / 2019 / 2020 </h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 5668 2851 Ext. 5 / 2019 / 2020 </h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 5668 0748 Ext. 5 / 2019 / 2020 </h6>
+              </ion-text>
+            </div>
+        </ion-card>
+      </div>
+  
+      <div class="col-lg-6 col-xl-3 my-auto mx-auto d-flex mini">
+        <ion-card mode="ios" class="ion-padding  mx-auto a" style="border:1px solid black">
+            <ion-text color="primary">
+              <h1 class="titulo text-center zz">ICIC</h1>
+            </ion-text>
+            <div class="d-flex">
+              <hr class="hr mx-auto">
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">asistente.icic@icic-oc.org</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">lizbeth.casanova@cmiccdmx.org</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">yoselin.pina@cmiccdmx.org</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 2748 6784</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 5424 7400 Ext. 2020 / 2019 / 2017 </h6>
+              </ion-text>
+            </div>
+        </ion-card>
+      </div>
+  
+      <div class="col-lg-6  col-xl-3 my-auto mx-auto d-flex mini">
+        <ion-card mode="ios" class="ion-padding a mx-auto" style="border:1px solid black">
+            <ion-text color="primary">
+              <h1 class="titulo text-center zz">FIC</h1>
+            </ion-text>
+            <div class="d-flex">
+              <hr class="hr mx-auto">
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">seminarios.fic@fic.org.mx</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="mail" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">asistente.icic@cmiccdmx.org</h6>
+              </ion-text>
+            </div>
+  
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="logo-whatsapp" class="ms-2 me-2 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 2712 0779</h6>
+              </ion-text>
+            </div>
+            <div class="text-start d-flex ion-margin-vertical">
+              <ion-icon color="primary" name="call" class="ms-2 me-3 my-auto f"></ion-icon>
+              <ion-text color="dark" class="me-auto my-auto">
+                <h6 class="f mb-0">55 6271 4910</h6>
+              </ion-text>
+            </div>
+        </ion-card>
+      </div>
+    </div>
+  
+  
+  </div>
+
+
+  <div class="d-flex py-5 w-100">
+    <div class=" mx-auto py-0 w-100">
+      <ion-card-content class="p-0 m-0 h-1 af">
+       <div class="row">
+        <div class="col-md-6 d-flex my-3 my-md-0 h-1 px-0">
+          <img src="../../../../../assets/15.jpg" class="img p-0" alt="">
+        </div>
+        <div class="col-md-6 d-flex bg-gray bgi">
+       <div class="m-auto container">
+        <ion-text class="ion-margin-vertical" color="primary">
+          <h5 ><strong>CMIC Ciudad de México</strong></h5>
+        </ion-text>
+        <h1  class="mb-2 titulo text-black"> Afíliate ahora a la CMIC y <br> disfruta todos los beneficios</h1>
+        <hr class="mb-5 ">
+  
+        <ion-button routerLink="/website/afiliate"  class="mb-3" shape="round">
+          Afíliate
+        </ion-button>
+      </div>
+        </div>
+       </div>
+      </ion-card-content>
+    </div>
+  
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 my-3 mx-auto text-center">
+        <img src="../../../../../assets/logo-icic2.png" alt="">
+      </div>
+      <div class="col-md-3 my-3 mx-auto text-center">
+        <img src="../../../../../assets/logo-itc-3.png" alt="">
+      </div>
+      <div class="col-md-3 my-3 mx-auto text-center">
+        <img src="../../../../../assets/logo-fic2.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <web-footer></web-footer>
+</ion-content>

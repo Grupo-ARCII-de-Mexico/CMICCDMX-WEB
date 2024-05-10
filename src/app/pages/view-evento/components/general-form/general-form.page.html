@@ -1,0 +1,47 @@
+<form  [formGroup]="usuarioForm"  *ngIf="usuarioForm">
+   
+  <ion-item>
+    <ion-input labelPlacement="floating"   formControlName="nombre" type="text">
+      <div slot="label">Nombre Completo <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"   formControlName="telefono" type="text">
+      <div slot="label">Teléfono <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"  formControlName="email" type="email">
+      <div slot="label">Correo <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Ingrese el nombre de su empresa" labelPlacement="floating"  formControlName="empresa" type="text">
+
+    </ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-input labelPlacement="floating"  formControlName="cargo" type="text">
+      <div slot="label">Cargo en la empresa <ion-text color="danger"></ion-text></div>
+    </ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-select   formControlName="estado" [cancelText]="'Cerrar'" okText="Seleccionar"  placeholder="Seleccione">
+      <div slot="label">Estado de Origen </div>
+      <ion-select-option *ngFor="let estado of estados" [value]="estado.id">{{estado.nombre}}</ion-select-option>
+      <ion-select-option *ngIf="extranjero"  class="border-top" [value]="extranjero.id">{{extranjero.nombre}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item >
+    <ion-input  labelPlacement="floating" formControlName="rfc" type="text">
+      <div slot="label" >RFC <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+ 
+  </ion-item>
+
+  <ion-button (click)="emit()" expand="block" slot="end"  shape="round" type="submit" [disabled]="usuarioForm.invalid  || disabled"  class="mt-3">
+    Registrarse
+  </ion-button>
+  
+</form>

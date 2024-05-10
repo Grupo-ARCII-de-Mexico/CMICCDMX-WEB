@@ -1,0 +1,120 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true" style="background-color: #d8d8d8;">
+  <div class="titulo row" style="z-index: 0;">
+    <ion-label class="text-white my-auto py-1 pb-2 mt-4 ms-3 ms-md-5 me-auto col-md-3  w-100"> 
+      
+  <div class="container">
+    <h1 class="titulo"><strong>Eventos</strong></h1>
+    <hr>
+    <div *ngIf="evento">
+      <div  class="dark  text-start p-2 px-4 my-3 h6" expand="block" color="dark"  shape="round">
+        Inicio  |
+        Eventos  | 
+           {{evento.titulo}}
+      </div>
+    </div>
+  </div>
+
+    </ion-label>
+    <img *ngIf="evento?.logotipo" [src]="uri+evento.logotipo" class="mx-auto mx-md-0 img-fluid col-6 my-1 py-2 my-md-auto col-md-3 me-0 me-md-3" width="300px" style="max-height: 300px;" alt="">
+  </div>
+  <div class="h" style="z-index: 1;">
+    <div class="bg-white row"  *ngIf="evento">
+
+      <div class=" d-flex container col-md-7" >
+        <div class="container d-flex mt-4 mt-md-0">
+          <ion-card mode="ios" class="shadow mt-5 mb-auto mx-auto ">
+            <ion-card-content 
+            class="izquierda d-flex h-100">
+              <ion-img [src]="uri+evento.imagen"  class="m-auto img-fluid"></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+      <div class="col-md-4  d-flex container">
+    <div class="container mt-3">
+      <ion-card class="shadow mx-auto w-100">
+        <ion-accordion-group value="second"  style="z-index: 1;">
+          <ion-accordion value="second">
+            <ion-item slot="header" color="primary">
+              <ion-card-title class="text-white"><b style="font-size: 20px;">Registro</b></ion-card-title>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <evento-form [evento]="evento" (usuarioGuardado)="getUser($event)"></evento-form>
+            </div>
+          </ion-accordion>
+          <ion-accordion value="first">
+            <ion-item slot="header" color="primary" >
+              <ion-card-title class="text-white mt-0"><b style="font-size: 20px;">Información del Evento</b></ion-card-title>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <div class="ion-padding">
+                <ion-card-title class="text-center text-black h2 mb-3"><b>{{evento.titulo}}</b></ion-card-title>
+                <ion-segment value="pizza" [(ngModel)]="segment">
+                  <ion-segment-button [value]="1">
+                    <ion-label>Información</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button *ngIf="evento.ponentes && evento.ponentes.length >0" [value]="2">
+                    <ion-label>Ponentes</ion-label>
+                  </ion-segment-button>
+                  <ion-segment-button *ngIf="evento.agenda && evento.agenda.length >0" [value]="3">
+                    <ion-label>Agenda</ion-label>
+                  </ion-segment-button>
+                </ion-segment>
+                <div *ngIf="segment==1">
+                  <ion-card-subtitle class="my-3" style="font-size: 14px;">Dia del evento: <b>{{mon(evento.fechaInicio)}}</b></ion-card-subtitle>
+                  <ion-card-subtitle class="my-3" style="font-size: 14px;">Cupo <b>{{evento.tieneCupoMaximo ? 'Limitado' : 'Ilimitado'}}</b></ion-card-subtitle>
+                  <ion-card-subtitle *ngIf="evento.lugar !== 'null' && evento.lugar " class="my-3" style="font-size: 14px;" >Lugar:  <b>{{evento.lugar}}</b> </ion-card-subtitle>
+                  <div class="text-center" style="width: 100%; height: 200px;" *ngIf="evento.mapLat">
+                      
+                  </div>
+                  <div *ngIf="!evento.esGratis">
+                    <ion-card-subtitle *ngIf="evento.costos.length > 0"  class="my-3" style="font-size: 14px;">Costos:</ion-card-subtitle>
+                      <div class="container" *ngFor="let item of evento.costos">
+                        <ion-card-subtitle  class="my-3" style="font-size: 14px;">{{item.nombre}}: <b>{{item.costo | currency}}</b> </ion-card-subtitle>
+                      </div>
+                 
+                  </div>
+                  <ion-card-subtitle class="my-3" style="font-size: 14px;" >Información Adicional: </ion-card-subtitle>
+                  <div class="text-justify contenido-con-estilos mt-2"
+                    [innerHTML]="html ">
+                  </div>
+                </div>
+                <div *ngIf="segment==2">
+                  <ion-list>
+                    <ion-item *ngFor="let item of evento.ponentes">
+                      <ion-avatar slot="start">
+                        <img *ngIf="item.foto" [src]="uriP + 'eventos-ponentes/' + item.foto" />
+                        <img *ngIf="!item.foto" src="../../../assets/avatar.jpg" />
+                      </ion-avatar>
+                      <ion-label>{{item?.nombre}}
+                        <p>{{item?.cargo}}</p>
+                      </ion-label>
+                    </ion-item>
+                  </ion-list>
+                </div>
+                <div *ngIf="segment==3">
+                  <ion-list>
+                    <ion-item *ngFor="let item of evento.agenda">
+                      <ion-label>{{item?.nombre}}
+                        <p>{{item?.horas}}</p>
+                      </ion-label>
+                    </ion-item>
+                  </ion-list>
+                </div>
+         
+              </div>
+            </div>
+          </ion-accordion>
+         
+        </ion-accordion-group>
+    
+      </ion-card>
+    </div>
+      </div>
+    
+     </div>
+    
+  </div>
+  <web-footer></web-footer>
+</ion-content>

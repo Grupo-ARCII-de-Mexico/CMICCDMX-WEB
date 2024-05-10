@@ -1,0 +1,57 @@
+.g{
+    font-weight: bolder;
+}
+
+hr {
+    border-color: var(--ion-color-primary);
+    background-color: var(--ion-color-primary);
+    border-width: 2px;
+    margin: 0;
+    width: 50px;
+    opacity: 1;
+    margin-right:auto; /* Centra horizontalmente el <hr> */
+  }
+  .modal-fondo{
+    background-image: url('../../../../../assets/56.jpg');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+  }
+  .fondo{
+    background-image: url('../../../../../assets/44.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vh;
+    color: white;
+  } 
+
+  .fondoo {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  img{
+    max-height: 150px;
+    width: 250px;
+    padding: 10px;
+  }
+
+  ion-searchbar{
+    width: 150px;
+  }
+  .custom-searchbar.rounded {
+    border-radius: 30px !important;
+  }
+
+  .fondoa {
+    min-height: 60vh;
+    background-image: url('../../../../../assets/55.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .fondoa div {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }

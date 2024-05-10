@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ya Casi Acabamos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item >
+    <ion-label>Seleccione su pago</ion-label>
+    <ion-select [cancelText]="'Cerrar'" okText="Seleccionar" [(ngModel)]="costoSeleccionado"  placeholder="Elegir">
+      <ion-select-option *ngFor="let pay of costos; let i = index" [value]="pay">{{pay.nombre}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="costoSeleccionado">
+    <ion-label>Seleccione Método de pago</ion-label>
+    <ion-select [cancelText]="'Cerrar'" okText="Seleccionar" [(ngModel)]="pago" placeholder="Elegir">
+      <ion-select-option *ngFor="let pay of tipoPago" [value]="pay">{{tipoPagoArray[pay]}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item  *ngIf="costoSeleccionado">
+    <ion-label>Requiero Factura</ion-label>
+   <ion-toggle [(ngModel)]="factura" slot="end"></ion-toggle>
+  </ion-item>
+  <ion-item  *ngIf="costoSeleccionado">
+    <ion-label>Importe</ion-label>
+    <ion-text slot="end" color="primary">
+     <b> {{total() | currency}}</b>
+    </ion-text>
+  </ion-item>
+
+  <div  *ngIf="costoSeleccionado">
+    <card-stripe [comision]="costoStripe(costoSeleccionado.costo)" (recuperarToken)="realizarPago($event)" *ngIf="pago === tipoPagoEnum.STRIPE"></card-stripe>
+    <div class=" text-center mt-5" *ngIf="pago == tipoPagoEnum.TRANSFERENCIA">
+        <h3>Finaliza el registro para recibir los datos por correo</h3>
+      <p>      Favor de enviar Constancia de Situación Fiscal (no mayor a 3 meses) al correo: natalia.vega@cmic.org </p>
+    </div>
+  </div>
+  <div *ngIf="pago == tipoPagoEnum.TRANSFERENCIA">
+    <ion-button expand="block" (click)="realizarPago()" shape="round">
+      Finalizar Registro
+    </ion-button>
+  </div>
+
+</ion-content>

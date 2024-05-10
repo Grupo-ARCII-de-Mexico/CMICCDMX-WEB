@@ -1,0 +1,87 @@
+
+
+  <ion-card class="shadow p-3  col-11 col-md-6 mx-auto my-3" *ngIf="view">
+    <ion-text class="text-center my-3 " color="primary">
+      <h3> <b>DATOS DEL CONTACTO DE LA EMPRESA</b> </h3>
+     </ion-text>
+     <form  [formGroup]="contactoForm">
+      <div class="container">
+        <ion-item [color]="editArray[0] ? '' : 'medium'">
+          <ion-input required [readonly]="!editArray[0]" [ngClass]="{edit : 'disable'}" formControlName="nombre" type="text" labelPlacement="floating">
+            <div slot="label"> 
+              Nombre
+              <ion-text color="danger">
+              *
+              </ion-text></div>
+          </ion-input>
+          <ion-button [color]="editArray[0] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[0] =!editArray[0]" fill="clear">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+       <ion-item  [color]="editArray[1] ? '' : 'medium'">
+          <ion-input required [readonly]="!editArray[1]" formControlName="paterno" type="text" labelPlacement="floating">
+            <div slot="label"> 
+              Apellido Paterno
+              <ion-text color="danger">
+              *
+              </ion-text></div>
+          </ion-input>
+          <ion-button [color]="editArray[1] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[1] =!editArray[1]" fill="clear">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item [color]="editArray[2] ? '' : 'medium'">
+          <ion-input [readonly]="!editArray[2]" formControlName="materno" type="text" labelPlacement="floating">
+            <div slot="label"> 
+              Apellido Materno
+              
+            </div>
+          </ion-input>
+          <ion-button [color]="editArray[2] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[2] =!editArray[2]" fill="clear">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item [color]="editArray[3] ? '' : 'medium'">
+          <ion-input  [readonly]="!editArray[3]" formControlName="telefonoOficina" type="text" labelPlacement="floating">
+            <div slot="label"> 
+              Teléfono Oficina
+            </div>
+          </ion-input>
+          <ion-button [color]="editArray[3] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[3] =!editArray[3]" fill="clear">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item [color]="editArray[3] ? '' : 'medium'">
+          <ion-input required [readonly]="!editArray[3]" formControlName="telefono" type="text" [maxlength]="10" labelPlacement="floating">
+            <div slot="label"> 
+              Teléfono Celular
+              <ion-text color="danger">
+                *
+                </ion-text>
+            </div>
+          </ion-input>
+          <ion-button [color]="editArray[3] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[3] =!editArray[3]" fill="clear">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      
+        <ion-item [color]="editArray[4] ? '' : 'medium'">
+          <ion-input required [readonly]="!editArray[4]" formControlName="email" type="email" labelPlacement="floating">
+            <div slot="label"> 
+              Email
+              <ion-text color="danger">
+                *
+                </ion-text>
+            </div>
+          </ion-input>
+          <ion-button [color]="editArray[4] ? 'primary' : 'light'" *ngIf="edit" slot="end" (click)="editArray[4] =!editArray[4]" fill="clear">
+            <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      
+      
+      </div>
+
+
+     </form>
+</ion-card>

@@ -1,0 +1,174 @@
+
+
+  
+  .text-overlay {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 60px;
+    font-weight: bold;
+    transform: translate(-30%, -50%);
+
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Borde redondeado alrededor del texto */
+    text-align: center;
+  }
+  .text-overlay-sm {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Borde redondeado alrededor del texto */
+    text-align: center;
+  }
+  
+
+  /* Establecer la mitad del ancho para el <hr> */
+  hr {
+    border-color: var(--ion-color-primary);
+    background-color: var(--ion-color-primary);
+    border-width: 2px;
+    margin: 0;
+    width: 50px;
+    opacity: 1;
+    margin-right:auto; /* Centra horizontalmente el <hr> */
+  }
+  
+
+  .bg{
+    background: rgb(255,255,255,0.1);
+    //background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 96%)!important;
+  }
+  
+
+  .mega{
+    color: white;
+    font-size: 3vw!important; /* 4% del ancho del viewport (64px en una pantalla de 1600px de ancho) */
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px black; /* Ancho y color del borde */
+    font-weight: bold;
+    font-family: 'Roboto'!important;
+  }
+  ion-card{
+    width: 80%;
+  }
+  
+  .h-1{
+    max-height: 400px;
+  }
+
+
+  /* Ajuste de tamaño de fuente para pantallas más pequeñas */
+@media (max-width: 768px) {
+    ion-card{
+        width: 80%;
+    }
+    .mega {
+      font-size: 32px!important; /* Usamos vw para ajustar el tamaño de fuente de forma dinámica */
+      -webkit-text-stroke: 1px black; /* Ancho y color del borde */
+    }
+    .h-1{
+      max-height: 700px;
+    }
+  }
+
+  .titulo{
+    font-size: 32px!important;
+    font-weight: bold;
+  }
+
+  swiper-container {
+    --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+    --swiper-pagination-color: var(--ion-color-primary, --ion-color-secondary);
+    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+  }
+  
+  .swiper-slide {
+    display: flex;
+    position: relative;
+    grid-area: slide;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+    height: 80vh;
+  
+    font-size: 18px;
+  
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  swiper-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    grid-area: auto;
+  }
+
+  .w-90{
+    width: 90%;
+  }
+
+
+  .gray{
+   background-color:  #f1f1f1;
+  }
+
+ 
+
+  .fondo{
+    background-image: url('../../../../../assets/foro.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+  } 
+  .bg-l{
+    background: rgb(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    //background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 96%)!important;
+  }
+  ion-label {
+    white-space: normal;
+  }
+  .cc{
+    width: 60%;
+  }
+
+
+
+  .af{
+    background-color: #f1f1f1;
+    transition:300ms
+  }
+
+  .af:hover{
+    background-color: #d4d4d4;
+    transition:300ms;
+
+  }
+  .af .row .col-md-6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms;
+  }
+
+.af:hover .row .col-md-6 img {
+  transform: scale(.95); 
+  transition:300ms;
+}
+
+
+.pointer{
+  cursor: pointer;
+}

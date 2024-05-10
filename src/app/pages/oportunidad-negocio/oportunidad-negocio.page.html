@@ -1,0 +1,62 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true"  >
+  <div class="titulo row" style="z-index: 0;">
+
+    <div class="me-auto ms-2 col-md-6 mt-5">
+      <div class="container">
+        <h1 class=" text-white"><strong>Oportunidades de Negocio</strong></h1>
+        <hr class="ms-2 mt-1">
+        <div class="" >
+          <div  class="h6 dark ion-text-capitalize text-start p-2 px-4 my-3 text-white" expand="block" color="dark"  shape="round">
+            Inicio  |
+            Oportunidades de Negocio  | 
+               {{negocio?.empresa}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="mx-auto mx-md-0 me-0 me-md-3  text-center col-md-3 ">
+        <img  [src]="uri+negocio?.logotipo" class=" img-fluid  my-1 py-2 my-md-auto  me-0 me-md-3" width="250px" style="max-height: 300px;" alt="">
+
+      </div>
+     </div>
+  <div style="background-color: white;">
+    <div class="container my-4">
+      <ion-label color="primary" class="my-4 etapa"><h1 class="etapa">Etapa 1</h1></ion-label>
+    </div>
+        <convocatoria [convocatoria]="negocio?.convocatoria" [documento]="negocio?.documento" ></convocatoria>
+        <negocio [success]="success" [negocio]="negocio" [sendForm]="terminos" (form)="getFormulario($event)"></negocio>
+        <contacto-negocio  [success]="success" [sendForm]="terminos"  (form)="getContacto($event)" ></contacto-negocio>
+    
+  </div>
+  <ion-card class="shadow p-3  col-11 col-md-6 mx-auto my-3" *ngIf="negocio?.especialidades.length > 0">
+    <ion-text class="text-center my-3 " color="primary">
+      <h3> <b>ESPECIALIDADES DE SU EMPRESA</b> </h3>
+     </ion-text>
+     <ion-text class="text-center my-2" color="primary">
+      <p class="text-black">Seleccione las especialidades de su empresa  </p>
+      <div class="my-4">
+        <ion-checkbox (ionChange)="setEspecialidad($event,item)" *ngFor="let item of negocio?.especialidades"  class="m-3">{{item}}</ion-checkbox>
+      </div>
+
+    </ion-text>
+</ion-card>
+
+  <ion-card class="shadow p-3  col-11 col-md-6 mx-auto my-3">
+
+      <ion-text class="text-center" >
+        <p>Al llenar este registro usted esta de acuerdo con el manejo de sus datos tal y como estipulamos en nuestro <a href="https://www.cmiccdmx.org/aviso-de-privacidad/" target="_blank" rel="noopener noreferrer"> Aviso de Privacidad</a> </p>
+      </ion-text>
+
+      <div class="d-flex">
+        <ion-toggle class="mx-auto" [(ngModel)]="terminos" (ionChange)="politicas($event)" >{{terminos ? 'Rechazar' : 'Aceptar'}}</ion-toggle>
+      </div>
+
+      <ion-button [disabled]="!terminos" (click)="save()" expand="block"shape="round" class="my-4">
+        Enviar Registro
+      </ion-button>
+  </ion-card>
+  
+<web-footer></web-footer>
+</ion-content>

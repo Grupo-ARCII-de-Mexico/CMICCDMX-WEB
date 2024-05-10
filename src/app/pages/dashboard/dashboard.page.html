@@ -1,0 +1,30 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-img slot="start" src="../../../assets/logo.png"></ion-img>
+    <ion-text slot="end" class="me-2">
+      <h6>Hola {{afiliado?.nombre}}</h6>
+    </ion-text>
+    <ion-buttons slot="end">
+    
+      <ion-menu-button menu="menu" ></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-split-pane when="md" contentId="main" color="primary">
+    <ion-menu contentId="main" menuId="menu">
+      <ion-item lines="none" color="primary" class="mt-4">
+      
+      </ion-item>
+      <ion-content class="ion-padding-vertical" color="primary">
+          <menu-item  [color]="'primary'" *ngFor="let item of menu" [item]="item" ></menu-item>
+      </ion-content>
+    </ion-menu>
+  
+    <div class="ion-page" id="main">
+      <ion-router-outlet class="mt-4"></ion-router-outlet>
+    </div>
+  </ion-split-pane>
+</ion-content>

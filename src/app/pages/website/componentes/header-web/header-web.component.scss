@@ -1,0 +1,89 @@
+.b{
+    width: 24px;
+    height: 24px;
+    --border-radius: 30px;
+    margin-left:16px ;
+    margin-right: 16px;
+    font-family: 'cmic';
+  }
+
+  .desactive:hover {
+    transition: 500ms;
+    color: var(--ion-color-primary); /* Color del texto cuando el enlace está activo */
+    font-weight: bold; /* Estilo del texto cuando el enlace está activo */
+    text-decoration: underline var(--ion-color-primary); /* Subrayado rojo */
+    text-underline-offset: 6px; 
+  }
+  .active {
+    transition: 500ms;
+    color: var(--ion-color-primary); /* Color del texto cuando el enlace está activo */
+    font-weight: bold; /* Estilo del texto cuando el enlace está activo */
+    text-decoration: underline var(--ion-color-primary); /* Subrayado rojo */
+    text-underline-offset: 6px; 
+  }
+  .desactive {
+    transition: 500ms;
+    cursor: pointer;
+  }
+
+ion-button, ion-text{
+  font-family: 'cmic';
+}
+.menu-container {
+  position: relative;
+  display: inline-block; /* Alinea los elementos en línea */
+}
+
+.list-group {
+  position: absolute;
+  top: 100%; /* Coloca la lista justo debajo del ion-text */
+  left: 0;
+  display: none;
+  z-index: 999; /* Ajusta el índice Z para que sea mayor que el del ion-text */
+  /* Agrega estilos adicionales según sea necesario */
+}
+
+nav{
+  background-color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 280px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999; /* Ajusta el índice Z según sea necesario */
+}
+
+.dropdown-content a {
+
+  
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  width: 200px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Opcional: Estilos para el botón */
+.dropbtn {
+
+  border: none;
+  cursor: pointer;
+}
+
+
+ .mt-aa {
+  margin-top: 12px;
+ }

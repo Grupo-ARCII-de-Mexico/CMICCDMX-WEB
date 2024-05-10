@@ -1,0 +1,318 @@
+<web-header></web-header>
+<ion-content [scrollEvents]="true"(ionScroll)="headerStatusService.setBooleanStatus($event)">
+ <!-- Slider-->
+ <swiper-container
+ 
+id="mySwiper"
+ #mySwiper [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+  [pagination]="paginationConfig"
+
+>
+    <swiper-slide (click)="go(item?.uri)" *ngFor="let item of sliders" class="swiper-slide pointer" style="
+    background-image: url({{uri + item.imagen}});
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(60px);
+    ">
+      <div class="bg w-100 bg h-100 d-flex" style="
+      background-image: url({{uri + item.imagen}});
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: contain;
+      ">
+        <div class="m-auto">
+          <p class="mega" *ngIf="item?.texto !== ('null' || null)" >{{item?.texto}}</p>
+        </div>
+      </div>
+     
+    </swiper-slide>
+
+  </swiper-container>
+
+<div class="d-flex py-5">
+  <ion-card mode="ios" class="shadow mx-auto py-3 cc">
+    <ion-card-content>
+     <div class="row">
+      <div class="col-xl-4 d-flex my-3">
+        <img class="mx-auto img-fluid p-2" src="../../../../../assets/logo-cd-mexico-1.png"  alt="">
+      </div>
+      <div class="col-xl-8 d-flex">
+     <div class="m-auto container">
+      <h1 style="font-weight: bold;" class="mb-2 text-black"> CMIC Ciudad de México</h1>
+      <hr class="mb-3">
+      <p>La CMIC Delegación Ciudad de México, cuenta con más de 400 afiliados de empresas connotadas, que cubren las necesidades de infraestructura, desarrollo y construcción que demanda la capital. Así, la CMIC CDMX, funge como representante de los industriales del sector, en esta circunscripción, en pro de la mejora y crecimiento de la infraestructura de la ciudad y calidad de vida de sus habitantes.</p>
+     </div>
+      </div>
+     </div>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div class="my-5">
+  <h1 class="text-center titulo h1">
+    Capacitación, Educación y Validación
+  </h1>
+  <div class="d-flex">
+    <hr class="mx-auto">
+  </div>
+</div>
+
+<div class="container">
+  <swiper-container 
+  class="d-flex"
+  [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+  [pagination]="paginationConfig"
+  [breakpoints]="breakpoints"
+
+>
+   <swiper-slide class="d-flex my-4 mx-auto" *ngFor="let item of cursos">
+    <ion-card class="mx-auto">
+      <ion-card-header
+      style="
+      background-image: url({{uri3 + item.imagen}});
+      background-position: center;
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      ">
+      </ion-card-header>
+      <ion-card-content>
+       <h4 class="text-black h2 text-center my-3" style="font-weight: bold;">{{item.titulo}}</h4>
+        <ion-button *ngIf="item.precio !== (null || 'null')"  (click)="openUrl(item.url)" color="secondary" expand="block"  shape="round">
+        {{item.precio | currency}} MXN
+       </ion-button>
+       <ion-button *ngIf="item.precio === (null || 'null')"  (click)="openUrl(item.url)" color="secondary" expand="block"  shape="round">
+        Más Información
+       </ion-button>
+      </ion-card-content>
+    </ion-card>
+   </swiper-slide>
+
+  </swiper-container>
+
+</div>
+
+
+<div class="d-flex py-5 w-100">
+  <div class=" mx-auto py-0 w-100">
+    <ion-card-content class="p-0 m-0 h-1 af">
+     <div class="row">
+      <div class="col-md-6 d-flex my-3 my-md-0 h-1 px-0">
+        <img src="../../../../../assets/13.jpg" class="img p-0" alt="">
+      </div>
+      <div class="col-md-6 d-flex bg-gray bgi">
+     <div class="m-auto container">
+      <ion-text class="ion-margin-vertical" color="primary">
+        <h5 ><strong>CMIC Ciudad de México</strong></h5>
+      </ion-text>
+      <h1  class="mb-2 titulo text-black"> Afíliate ahora a la CMIC y <br> disfruta todos los beneficios</h1>
+      <hr class="mb-5 ">
+
+      <ion-button routerLink="/website/afiliate"  class="mb-3" shape="round">
+        Afíliate
+      </ion-button>
+    </div>
+      </div>
+     </div>
+    </ion-card-content>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="text-center d-flex flex-column titulo">
+    <h1 style="font-weight: bold;" class="mb-2 titulo"> Historias de Éxito</h1>
+    <hr class="mb-3 mx-auto">
+  </div>
+  <swiper-container 
+  class="d-flex"
+  [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+  [pagination]="paginationConfig"
+  [slidesPerView]="3"
+  [breakpoints]="breakpoints"
+
+>
+   <swiper-slide class="d-flex my-4 mx-auto" *ngFor="let item of comentarios">
+    <ion-card class="mx-auto w-90" mode="ios" >
+
+      <ion-card-content class="p-4">
+  
+        <ion-icon color="primary"  [name]="item.puntuacion >= 1 ? 'star' :'star-outline'"></ion-icon>
+        <ion-icon color="primary"  [name]="item.puntuacion >= 2 ? 'star' :'star-outline'"></ion-icon>
+        <ion-icon color="primary"  [name]="item.puntuacion >= 3 ? 'star' :'star-outline'"></ion-icon>
+        <ion-icon color="primary"  [name]="item.puntuacion >= 4 ? 'star' :'star-outline'"></ion-icon>
+        <ion-icon color="primary"  [name]="item.puntuacion >= 5 ? 'star' :'star-outline'"></ion-icon>
+
+        <ion-text color="secondary">
+          <h5 [innerHTML]="safe(item.texto)" class="ion-text-justify my-5">
+
+          </h5>
+        </ion-text>
+
+       <ion-item lines="none">
+        <ion-avatar slot="start" style="width: 50px; height: 50px;">
+          <img [src]="uri4+item.imagen" style="width: 50px; height: 50px;" />
+        </ion-avatar>
+        <ion-label>
+          {{item?.persona}}
+          <p *ngIf="item.empresa !== ('null' || null)">{{item?.empresa}}</p>
+        </ion-label>
+       </ion-item>
+      </ion-card-content>
+    </ion-card>
+   </swiper-slide>
+
+
+  </swiper-container>
+
+</div>
+
+<div class="container gray">
+  <div class="text-center d-flex flex-column titulo ">
+    <h1 style="font-weight: bold;" class="mb-2 mt-5 titulo"> Preguntas Frecuentes</h1>
+    <hr class="mb-3 mx-auto">
+  </div>
+ 
+  <div class="container">
+    <ion-accordion-group animated>
+     <div class="row">
+      <div class="col-lg-6">
+        <ion-accordion animated class="border my-3" value="first" toggleIcon="add">
+          <ion-item lines="none" slot="header" color="white" >
+  
+              <h5 class="d-none d-md-block   text-black">¿Qué requisitos necesito para afiliarme?</h5>
+              <p class="d-block d-md-none h5 mb-0  text-black">¿Qué requisitos necesito para afiliarme?</p>
+     
+          </ion-item>
+          <div class="ion-padding container" slot="content">
+  
+            Para ser un <strong>Afiliado CMIC CDMX</strong> le recomendamos dar click al enlace siguiente:
+            <ion-button routerLink="/website/afiliate" expand="block" fill="clear" shape="round">
+              Ver requisitos
+            </ion-button>
+          </div>
+        </ion-accordion>
+
+      
+      </div>
+      <div class="col-lg-6">
+        <ion-accordion class="border my-3" value="se" toggleIcon="add">
+          <ion-item lines="none" slot="header" color="white" >
+              <h5 class="d-none d-md-block text-black text-center">¿Cuáles son los beneficios?</h5>
+              <p class="d-block d-md-none h5  mb-0  text-black">¿Cuáles son los beneficios?</p>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            Entre los beneficios se encuentrán 
+            <ol class="my-3">
+              <strong>
+              <li>Corportativo de Seguros y Fianzas</li>
+              <li>Representación y Gestión</li>
+              <li>Financiamiento</li>
+              <li>Asesoría Legal en Materia</li>
+              <li>Reuniones, Conferencias y Foros</li>
+            </strong>
+            </ol>
+            Si desea ver todos los beneficios o más detalles de los mencionados le recomendamos acceder al siguiente enlace: 
+            <ion-button routerLink="/website/afiliate" expand="block" fill="clear" shape="round">
+              Ver más información
+            </ion-button>
+          </div>
+        </ion-accordion>
+      </div>
+      <div class="col-lg-6 mx-auto">
+        <ion-accordion class="border my-3" value="th" toggleIcon="add">
+          <ion-item lines="none" slot="header" color="white" >
+              <h5 class="d-none d-md-block text-black">¿Qué duración tiene mi afiliación CMIC?</h5>
+              <p class="d-block d-md-none h5 mb-0  text-black">¿Qué duración tiene mi afiliación CMIC?</p>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            Tu certificado de <strong>afiliación CMIC</strong> dura de enero a diciembre del año natural, sin embargo, tus beneficios terminan hasta mayo del año siguiente a tu afiliación, conozca más información sobre su afiliación:
+            <ion-button routerLink="/website/afiliate" expand="block" fill="clear" shape="round">
+              Ver más información
+            </ion-button>
+          </div>
+        </ion-accordion>
+      </div>
+     </div>
+    </ion-accordion-group>
+    <br><br>
+  </div>
+
+</div>
+
+<div class="container my-5">
+  <div class="text-center d-flex flex-column titulo">
+    <h1 style="font-weight: bold;" class="mb-2 titulo"> Boletín Informativo</h1>
+    <hr class="mb-3 mx-auto">
+  </div>
+  <swiper-container 
+  class="d-flex"
+  [autoplay]="{delay: 4000, pauseOnMouseEnter:true}"
+  [pagination]="paginationConfig"
+  #SwiperBol
+  id="SwiperBol"
+  [breakpoints]="breakpoints"
+
+>
+   <swiper-slide *ngFor="let item of boletines" class="d-flex my-4 mx-auto">
+    <ion-card class="mx-auto w-90">
+      <ion-card-header
+      style="
+      background-image: url({{meterimagen(item)}});
+      background-position: center;
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      ">
+      </ion-card-header>
+      <ion-card-content>
+       <h4 class="text-black h3 text-start my-3" >{{item.titulo.slice(0,50)}}{{item.titulo.length >= 50 ? '...':''}}</h4>
+       <p> {{mon(item.createdAt)}}</p>
+        <div class="d-flex my-2">
+          <ion-button routerLink="/website/boletin/{{item.identificador}}" routerLinkActive="router-link-active"  class="mx-auto" color="primary" shape="round">
+            Leer más
+           </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+   </swiper-slide>
+
+
+  </swiper-container>
+
+  <ion-buttons slot="start">
+    <ion-button color="primary" fill="clear" (click)="back()">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" fill="clear" (click)="next()">
+      <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>
+
+<div class="fondo d-flex">
+  <div class=" frojo w-100 d-flex flex-column">
+    <h1 class="titulo my-3 text-white mx-auto mt-auto"> Próximos eventos</h1>
+    <ion-button routerLink="/website/eventos"  class="mx-auto mb-auto" shape="round">
+      Calendario
+    </ion-button>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-icic2.png" alt="">
+    </div>
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-itc-3.png" alt="">
+    </div>
+    <div class="col-md-3 my-3 mx-auto text-center">
+      <img src="../../../../../assets/logo-fic2.png" alt="">
+    </div>
+  </div>
+</div>
+
+  <web-footer></web-footer>
+</ion-content>

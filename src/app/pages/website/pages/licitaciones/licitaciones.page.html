@@ -1,0 +1,94 @@
+<web-header></web-header>
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="headerStatusService.setBooleanStatus($event)">
+ 
+  <div class="mapa d-flex">
+    <div class="col-10 col-md-6 col-lg-5 my-auto mx-auto ms-auto   my-auto">
+      <ion-card class="d-flex flex-column ion-padding shadow ">
+
+        <div class="row">
+          <div class="col-xl-6 border-end">
+            <div class="my-2 text-center text-black">
+              <h1 class="" >      <strong>
+                ¡Bienvenido!
+              </strong>
+              </h1>
+              <div class="d-flex mb-3 ">
+                <hr class="palito mx-auto">
+              </div>
+              <div class="container my-3 h6 ion-text-justify lh" >
+                En esta página podrá consultar la información relevante sobre las licitaciones de obra pública por sector, esta información es de uso exclusivo de nuestros afiliados CMIC Ciudad de México, si usted aún no se encuentra afiliado ¡No se preocupe! Afíliese a la CMIC Hoy
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <h1 class="text-center titu text-black">Licitaciones</h1>
+            <hr class="mx-auto hrr">
+            <ion-input class="ion-margin-vertical" label="No. de Afiliado" color="primary" [(ngModel)]="afiliado" label-placement="stacked"
+              fill="outline" placeholder=""></ion-input>
+            <ion-input class="ion-margin-vertical" type="password" label="NIP" [(ngModel)]="nip" color="primary" label-placement="stacked" fill="outline"
+              placeholder=""></ion-input>
+                <div class="d-flex">
+                  <ion-button (click)="access()" [disabled]="!afiliado || !nip" class="mx-auto ion-margin-vertical" shape="round">
+                    Ingresar
+                  </ion-button>
+                </div>
+                <ion-text id="open-modal" color="primary" class="ion-text-center" style="cursor: pointer;">
+                  <p>¿Dónde veo estos datos? </p>
+                </ion-text>
+          </div>
+          
+          <hr class="mt-3">
+          <ion-button (click)="go('https://www.obras.cdmx.gob.mx/comites/comite-central/formatos-2024')"  shape="round" class="ion-text-capitalize">
+            <span class="d-none d-md-block">Consulta los formatos</span> homologados de la SOBSE
+            <ion-icon name="arrow-redo-outline" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+
+      
+      </ion-card>
+    </div>
+  </div>
+
+  <ion-modal trigger="open-modal" >
+    <ng-template class="h-100">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start" color="primary">
+            <ion-button color="primary" (click)="cancel()">cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="h-100">
+        <ion-img class="m-auto p-3" src="../../../../../assets/afiliacion-inst.jpg" alt=""></ion-img>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <div class="row my-5 px-3">
+    <div class="col-md-2 mx-auto d-flex my-4">
+      <img class="m-auto " src="../../../../../assets/tianguis_digital.svg" alt="">
+    </div>
+ 
+    <div class="col-md-2 mx-auto d-flex my-4">
+      <img class="m-auto" src="../../../../../assets/cfe.png" alt="">
+    </div>
+    <div class="col-md-4 mx-auto d-flex my-4">
+      <div class="row">
+        <img class="m-auto col-6 px-0" src="../../../../../assets/Logo_CDMX.png" alt="">
+        <img class="m-auto  col-5 px-0" src="../../../../../assets/Logo_Dependencia.png" alt="">
+      </div>
+    </div>
+  
+
+    <div class="col-md-2 mx-auto d-flex my-4">
+      <img class="m-auto" src="../../../../../assets/compranet.jpg" alt="">
+    </div>
+
+  </div>
+
+
+
+
+  <web-footer></web-footer>
+</ion-content>

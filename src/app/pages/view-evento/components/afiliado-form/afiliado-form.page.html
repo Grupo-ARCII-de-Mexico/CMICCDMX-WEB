@@ -1,0 +1,43 @@
+<form [formGroup]="usuarioForm" *ngIf="usuarioForm">
+   
+  <ion-item >
+    <ion-input labelPlacement="floating" formControlName="numAfiliado" type="text">
+      <div slot="label">No. Afiliado <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"   formControlName="nombre" type="text">
+      <div slot="label">Nombre Completo <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"   formControlName="telefono" type="text">
+      <div slot="label">Teléfono <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input labelPlacement="floating"  formControlName="email" type="email">
+      <div slot="label">Correo <ion-text color="danger">*</ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-input labelPlacement="floating"  formControlName="cargo" type="text">
+      <div slot="label">Cargo en la empresa <ion-text color="danger"></ion-text></div>
+    </ion-input>
+  </ion-item>
+  <ion-item >
+  <ion-select label="Delegación CMIC" formControlName="delegacion" [cancelText]="'Cerrar'" okText="Seleccionar" placeholder="Seleccione">
+    <ion-select-option *ngFor="let delegacion of delegaciones" [value]="delegacion.id">{{delegacion.ciudad}}</ion-select-option>
+  </ion-select>
+  </ion-item>
+  <ion-item >
+    <ion-input   labelPlacement="floating" formControlName="rfc" type="text">
+      <div slot="label" >RFC <ion-text color="danger"></ion-text></div>
+    </ion-input>
+ 
+  </ion-item>
+  <ion-button (click)="emit()" expand="block" slot="end"  shape="round" type="submit" [disabled]="usuarioForm.invalid || disabled"  class="mt-3">
+    Registrarse
+  </ion-button>
+  
+</form>

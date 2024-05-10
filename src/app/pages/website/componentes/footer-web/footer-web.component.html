@@ -1,0 +1,128 @@
+
+  <div class="fondo">
+ <div class="container mt-3 ">
+  <div class="row ion-margin-top w-100 " >
+    <div class=" col-md-3 d-flex flex-column mx-auto">
+      <div class="mt-1"></div>
+      <ion-img src="../../../../../assets/cmic-img-1.png" style="width: 150px;" class="mx-auto my-4 mt-4"></ion-img>
+      <hr class="mx-auto">
+      <ion-button routerLink="/website/afiliate" class="mx-auto mt-4 my-2" shape="round">
+        Afíliate
+      </ion-button>
+      <ion-button  *ngIf="!sessionActive" routerLink="/login"  class="mx-auto my-2 mt-4" shape="round">
+       Iniciar sesión
+      </ion-button>
+      <ion-button routerLink="/dashboard" class="mx-auto my-2 mt-4" expand="block" color="light" fill="clear" *ngIf="sessionActive"  shape="round">
+        Dashboard <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class=" col-md-3 text-center text-md-start mx-auto">
+      <ion-label color="primary" class="text-left ps-0 t-4" style="font-weight: bolder;">
+          <h4 class="pt-2 mt-4" style="font-weight: bold;">Quick Links</h4></ion-label>
+          <hr class=" me-sm-0 me-md-auto mx-auto mx-sm-auto mx-md-0">
+      <ion-text class="ion-margin-vertical"  color="light">
+        <h5 class="ion-margin-vertical desactive" >Oportunidades de negocio</h5>
+      </ion-text>
+      <ion-text class="my-3" routerLink="/website/eventos"  color="light">
+        <h5 class="ion-margin-vertical desactive">Eventos</h5>
+      </ion-text>
+      <ion-text class="my-3"  color="light">
+        <h5 class="ion-margin-vertical desactive">Licitaciones</h5>
+      </ion-text>
+      <ion-text class="my-3" routerLink="/website/instituciones"  color="light">
+        <h5 class="ion-margin-vertical desactive">Instituciones</h5>
+      </ion-text>
+      <ion-text class="my-3" routerLink="/website/cmic"  color="light">
+        <h5 class="ion-margin-vertical desactive">CMIC CDMX</h5>
+      </ion-text>
+      <ion-text class="my-3" routerLink="/website/contacto"  color="light">
+        <h5 class="ion-margin-vertical desactive">Contacto</h5>
+      </ion-text>
+    </div>
+
+    <div class="col-md-3 text-center text-md-start mx-auto ">
+      <ion-label color="primary" class="text-left ps-0 t-4" style="font-weight: bolder;">
+        <h4 class="pt-2 mt-4" style="font-weight: bold;">Información Legal</h4>
+        <hr class="me-sm-0 me-md-auto mx-auto mx-sm-auto mx-md-0">
+        </ion-label>
+      <ion-text (click)="openUrl('https://www.cmic.org.mx/comisiones/tematicas/normatividad/ESTATUTOS_CMIC_2021.pdf')" class="ion-margin-vertical"  color="light">
+        <h5 class="ion-margin-vertical desactive">Estatutos</h5>
+      </ion-text>
+      <ion-text (click)="openUrl('https://www.cmic.org/wp-content/uploads/2021/08/Codigo-de-etica-2021.pdf')" class="my-3"  color="light">
+        <h5 class="ion-margin-vertical desactive">Código de Ética</h5>
+      </ion-text>
+      <ion-text (click)="openUrl('https://www.cmic.org.mx/comisiones/tematicas/normatividad/LINEAMIENTOS%20CDMX%20PROSA-VOBODJ-FINAL.pdf')" class="my-3"  color="light">
+        <h5 class="ion-margin-vertical desactive">Lineamientos CMIC CDMX </h5>
+      </ion-text>
+      <ion-text class="my-3" routerLink="/website/privacidad"  color="light">
+        <h5 class="ion-margin-vertical desactive">Aviso de Privacidad</h5>
+      </ion-text>
+      <ion-text (click)="openUrl('mailto:asesor.juridico@cmic.org')" class="my-3"  color="light">
+        <h5 class="ion-margin-vertical desactive">Asesoría Jurídica</h5>
+      </ion-text>
+      <ion-text class="my-3"  routerLink="/website/bolsa-trabajo"  color="light">
+        <h5 class="ion-margin-vertical desactive">Bolsa de Trabajo</h5>
+      </ion-text>
+    </div>
+    <div class=" col-md-3  text-center text-md-start mx-auto  ">
+      <ion-label color="primary" class="text-left ps-0 t-4" style="font-weight: bolder;">
+        <h4 class="pt-2 mt-4" style="font-weight: bold;">Contacto</h4>
+        <hr class="me-sm-0 me-md-auto mx-auto mx-sm-auto mx-md-0">
+        </ion-label>
+      <div class="row my-4 pointer" (click)="openUrl('mailto:comunicacioncmic.cdmx@cmic.org')" >
+        <div class="col-1 mx-auto mx-md-0">
+          <ion-icon  style="font-size: 30px;" class="me-3 " color="primary"  name="mail"></ion-icon>
+        </div>
+        <div class="col-10 text-white ms-2 desactive mx-auto mx-md-0">
+          comunicacioncmic.cdmx@cmic.org
+        </div>
+      </div>
+      <div class="row my-4 pointer " (click)="openUrl('https://maps.app.goo.gl/P4t1iEo3BDFGTB4m7')" >
+        <div class="col-1 mx-auto mx-md-0">
+          <ion-icon  style="font-size: 30px;" class="me-3 " color="primary"  name="location"></ion-icon>
+        </div>
+        <div class="col-10 text-white ms-2 desactive mx-auto mx-md-0">
+          Periférico Sur No. 4839 PB,  CP 14010, Parques del Pedregal, Tlalpan CDMX
+        </div>
+      </div>
+      <div class="row my-4 pointer" (click)="openUrl('tel:+525554247463')" >
+        <div class="col-1 mx-auto mx-md-0">
+          <ion-icon  style="font-size: 30px;" class="me-3 " color="primary"  name="call"></ion-icon>
+        </div>
+        <div class="col-9 text-white ms-2 desactive mx-auto mx-md-0">
+          55 5424 7463
+        </div>
+      </div>
+     
+       <div class="d-flex w-100">
+        <ion-buttons  class="my-2  me-sm-0 me-md-auto mx-auto mx-sm-auto mx-md-0">
+          <ion-button (click)="openUrl('https://www.instagram.com/cmic.cdmx')" class="mx-1 b  ion-no-padding" color="light" fill="clear"  shape="round">
+            <ion-icon slot="icon-only" style="font-size: 30px;"  name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button (click)="openUrl('https://www.facebook.com/CMICCDMX/')" class="mx-1 b  ion-no-padding" fill="clear"  color="light"  shape="round">
+            <ion-icon slot="icon-only" style="font-size: 30px;"  name="logo-instagram"></ion-icon>
+          </ion-button>
+          <ion-button (click)="openUrl('https://www.youtube.com/channel/UCNT08GAl28pxLXH7heNz5qg')" fill="clear"  class="mx-1 b  ion-no-padding" color="light"  shape="round">
+            <ion-icon slot="icon-only" style="font-size: 30px;"  name="logo-youtube"></ion-icon>
+          </ion-button>
+          <ion-button (click)="openUrl('https://twitter.com/cmic_cdmx')"class="mx-1 b  ion-no-padding" fill="clear"  color="light"  shape="round">
+           <img src="../../../../../assets/X_logo_2023_(white).png"  alt="">
+          </ion-button>
+          <ion-button (click)="openUrl('http://linkedin.com/company/cmiccdmx')" class="mx-1 b  ion-no-padding" fill="clear"  color="light"  shape="round">
+            <ion-icon slot="icon-only" style="font-size: 30px;"  name="logo-linkedin"></ion-icon>
+          </ion-button>
+          <ion-button (click)="openUrl('https://www.tiktok.com/@cmic_cdmx')" class="mx-1 b  ion-no-padding" fill="clear"  color="light"  shape="round">
+            <ion-icon slot="icon-only" style="font-size: 30px;"  name="logo-tiktok"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+       </div>
+  </div>
+  </div>
+  <hr class="mx-auto hrr mt-3">
+  <div class="py-5 text-center text-white">
+TODOS los derechos reservados, Grupo ARCII de Mexico S de RL de CV - Para uso interno ÚNICAMENTE su reproducción total o parcial está totalmente prohibida
+
+  </div>
+ </div>
+  </div>
